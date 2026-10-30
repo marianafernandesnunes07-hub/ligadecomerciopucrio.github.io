@@ -73,7 +73,7 @@ main:focus, section:focus { outline: none; }
   padding-inline: 1rem;
 }
 @media (min-width: 48rem) { .container { padding-inline: 2rem; } }
-.container--texto { max-width: calc(var(--largura-texto) + 4rem); }
+.container--texto { max-width: var(--largura-max); }
 
 .secao { padding-block: var(--e-5); }
 .secao--clara { background: var(--papel-2); }
@@ -106,8 +106,8 @@ main:focus, section:focus { outline: none; }
 
 .texto-longo { max-width: var(--largura-texto); }
 
-.grade-2 { display: grid; gap: var(--e-3); }
-@media (min-width: 56rem) { .grade-2 { grid-template-columns: 1fr 2fr; gap: var(--e-4); } }
+/* Título em cima e texto embaixo, ocupando toda a largura. */
+.grade-2 { display: grid; gap: 0; }
 
 .lista { padding-left: 1.2rem; }
 .lista li { margin-bottom: var(--e-1); }

@@ -42,7 +42,9 @@
   --e-5: clamp(3.5rem, 2.5rem + 4vw, 6rem); /* espaço entre seções */
 
   --largura-max: 72rem;
-  --largura-texto: 42rem;
+  /* Largura máxima dos parágrafos. 100% = ocupa toda a largura do conteúdo.
+     Para colunas de texto mais estreitas, use um valor como 42rem. */
+  --largura-texto: 100%;
   --raio: 4px;
   --sombra: 0 1px 2px rgb(31 26 26 / 0.06), 0 8px 24px rgb(31 26 26 / 0.06);
 }

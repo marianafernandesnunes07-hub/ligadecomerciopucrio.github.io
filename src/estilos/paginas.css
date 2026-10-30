@@ -105,7 +105,6 @@
 .depoimento__nome { display: block; font-weight: 700; color: var(--vinho); }
 .depoimento__id { display: block; font-size: var(--t-pequeno); color: var(--tinta-suave); }
 
-.contato__interno { max-width: 46rem; }
 .contato__chamada { font-family: var(--fonte-titulo); font-size: var(--t-medio); }
 .contato__canais { list-style: none; padding: 0; margin: var(--e-3) 0; display: grid; gap: var(--e-2); }
 .contato__canais li { display: grid; gap: 0.1rem; }
@@ -164,7 +163,7 @@
 .post__categoria a { color: var(--laranja-texto); text-decoration: none; }
 .post__titulo { font-size: clamp(1.8rem, 1.3rem + 2.2vw, 3rem); }
 .post__meta { color: var(--tinta-suave); }
-.post__capa { margin: var(--e-4) auto; max-width: 60rem; }
+.post__capa { margin: var(--e-4) auto; }
 .post__capa img { width: 100%; border-radius: var(--raio); }
 .post__texto { font-size: 1.125rem; line-height: 1.75; }
 .post__texto h2 { font-size: 1.6rem; margin-top: var(--e-4); }
