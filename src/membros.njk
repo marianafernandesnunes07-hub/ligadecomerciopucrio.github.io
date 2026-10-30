@@ -1,0 +1,46 @@
+---
+layout: base.njk
+titulo: Membros
+fundo: claro    # fundo off-white abaixo do título
+permalink: /membros/
+---
+{% import "componentes.njk" as c %}
+{# MEMBROS: nomes, cursos e fotos em src/_dados/membros.json
+   (painel: Institucional → Membros). A diretoria fica em diretoria.json e aparece na página inicial. #}
+<header class="cabecalho-pagina">
+  <div class="container">
+    <h1>Membros {{ membros.gestao }}</h1>
+    {{ c.pendente("texto curto de apresentação dos membros da Liga.", site.mostrarPendencias) }}
+    <nav aria-label="Grupos de trabalho">
+      <ul class="ancoras">
+        <li><a href="/#diretoria">Diretoria</a></li>
+        {% for g in membros.grupos %}<li><a href="#gt-{{ loop.index }}">{{ g.area }}</a></li>{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% for g in membros.grupos %}
+<section class="secao secao--categoria" id="gt-{{ loop.index }}" aria-labelledby="titulo-gt-{{ loop.index }}">
+  <div class="container">
+    <h2 id="titulo-gt-{{ loop.index }}" class="titulo-secao">{{ g.area }}</h2>
+    {% if g.membros and g.membros.length %}
+      <ul class="diretoria">
+        {% for pessoa in g.membros %}
+          <li class="pessoa">
+            {% if pessoa.foto %}
+              <img src="{{ pessoa.foto }}" alt="Foto de {{ pessoa.nome }}" loading="lazy" width="300" height="300">
+            {% else %}
+              <div class="pessoa__sem-foto foto-pendente" aria-hidden="true">Sem foto</div>
+            {% endif %}
+            <p class="pessoa__nome">{{ pessoa.nome }}</p>
+            {% if pessoa.curso %}<p class="pessoa__cargo">{{ pessoa.curso }}</p>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {{ c.pendente("nomes, cursos e fotos dos membros de " + g.area + ".", site.mostrarPendencias) }}
+    {% endif %}
+  </div>
+</section>
+{% endfor %}

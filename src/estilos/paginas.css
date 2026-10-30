@@ -68,12 +68,18 @@
 
 .depoimento {
   margin: 0;
+  width: 100%;
   background: var(--papel);
   border-left: 3px solid var(--laranja);
   padding: var(--e-3);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: var(--e-3);
+  align-content: start;
 }
+/* Foto ao lado do texto quando o card tem largura para isso. */
+@media (min-width: 30rem) { .depoimento { grid-template-columns: 9rem minmax(0, 1fr); } }
+.depoimento__foto { display: grid; width: 100%; max-width: 9rem; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--raio); background: var(--papel-2); }
+.depoimento__corpo { display: flex; flex-direction: column; }
 .depoimento__texto { margin: 0 0 var(--e-2); font-size: 1rem; }
 /* Quando o script recolhe o texto, só as primeiras linhas aparecem. */
 .depoimento__texto.recolhido p {
@@ -96,15 +102,10 @@
   text-underline-offset: 0.2em;
   cursor: pointer;
 }
-.depoimento__autor { margin-top: auto; display: flex; align-items: center; gap: var(--e-2); }
-.depoimento__foto { flex: none; width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover; background: var(--papel-2); }
-.depoimento__foto--iniciais {
-  display: grid; place-items: center;
-  background: var(--vinho); color: var(--papel);
-  font-family: var(--fonte-titulo); font-weight: 600; font-size: 1.1rem;
-}
+.depoimento__autor { margin-top: auto; }
 .depoimento__nome { display: block; font-weight: 700; color: var(--vinho); }
 .depoimento__id { display: block; font-size: var(--t-pequeno); color: var(--tinta-suave); }
+.depoimento__linkedin { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: var(--e-1); font-weight: 600; font-size: var(--t-pequeno); }
 
 .contato__chamada { font-family: var(--fonte-titulo); font-size: var(--t-medio); }
 .contato__canais { list-style: none; padding: 0; margin: var(--e-3) 0; display: grid; gap: var(--e-2); }
@@ -213,6 +214,7 @@
   color: var(--tinta-suave);
   font-size: var(--t-pequeno);
   text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+  text-align: center; padding: var(--e-1);
 }
 
 /* ---------- Carrossel das palestras ---------- */
@@ -290,3 +292,16 @@
   background: transparent; cursor: pointer;
 }
 .atividades__ponto[aria-current="true"] { background: var(--vinho); }
+
+/* Depoimentos: dois por vez no computador, um por vez no celular.
+   Cada card tem a própria altura, assim abrir um texto não estica os vizinhos. */
+.carrossel--depoimentos { margin-top: var(--e-3); }
+.carrossel--depoimentos .carrossel__trilho { grid-auto-columns: 90%; align-items: start; }
+@media (min-width: 64rem) { .carrossel--depoimentos .carrossel__trilho { grid-auto-columns: calc((100% - var(--e-3)) / 2); } }
+.carrossel--depoimentos + .pendente { margin-top: var(--e-3); }
+
+/* Link da diretoria para a página de membros. */
+.diretoria__mais { margin: var(--e-4) 0 0; }
+/* Membro sem foto: quadrado tracejado do mesmo tamanho das fotos. */
+.pessoa__sem-foto { aspect-ratio: 1; width: 100%; margin-bottom: var(--e-2); border-radius: var(--raio); }
+.fundo-claro .pessoa__sem-foto { background: var(--papel); }

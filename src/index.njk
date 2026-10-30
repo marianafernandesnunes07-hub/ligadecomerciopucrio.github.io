@@ -101,37 +101,60 @@ layout: base.njk
         </li>
       {% endfor %}
     </ul>
+    <p class="diretoria__mais"><a class="botao" href="/membros/">Conheça todos os membros</a></p>
   </div>
 </section>
 
-{# DEPOIMENTOS: textos em src/_dados/depoimentos.json.
+{# DEPOIMENTOS: textos, fotos e LinkedIn em src/_dados/depoimentos.json (painel: Institucional → Depoimentos).
+   Aparecem dois por vez; as setas passam para os próximos (carrossel.js).
    O script depoimentos.js corta os textos longos e cria o botão "Ler depoimento completo". #}
 <section class="secao secao--clara" aria-labelledby="depoimentos">
   <div class="container">
     <h2 id="depoimentos" class="titulo-secao">Depoimentos</h2>
-    <div class="grade-cards grade-cards--3">
-      {% for d in depoimentos %}
-        <figure class="depoimento">
-          <blockquote class="depoimento__texto" id="depoimento-{{ loop.index }}">
-            <p>“{{ d.texto }}”</p>
-          </blockquote>
-          <figcaption class="depoimento__autor">
-            {% if d.foto %}
-              <img class="depoimento__foto" src="{{ d.foto }}" alt="" loading="lazy" width="120" height="120">
-            {% else %}
-              {# Sem foto: mostra as iniciais no lugar. #}
-              <span class="depoimento__foto depoimento__foto--iniciais" aria-hidden="true">{{ d.nome | iniciais }}</span>
-            {% endif %}
-            <span>
-              <span class="depoimento__nome">{{ d.nome }}</span>
-              <span class="depoimento__id">{{ d.identificacao }}</span>
-            </span>
-          </figcaption>
-        </figure>
-      {% endfor %}
+    <div class="carrossel carrossel--depoimentos" data-carrossel>
+      <ul class="carrossel__trilho" id="trilho-depoimentos" tabindex="0" aria-label="Depoimentos: role para o lado para ver mais">
+        {% for d in depoimentos %}
+        <li class="carrossel__item">
+          <figure class="depoimento">
+            <div class="depoimento__foto-area">
+              {% if d.foto %}
+                <img class="depoimento__foto" src="{{ d.foto }}" alt="Foto de {{ d.nome }}" loading="lazy" width="300" height="375">
+              {% elif site.mostrarPendencias %}
+                <div class="depoimento__foto foto-pendente" aria-hidden="true">Foto a completar</div>
+              {% endif %}
+            </div>
+            <div class="depoimento__corpo">
+              <blockquote class="depoimento__texto" id="depoimento-{{ loop.index }}">
+                <p>“{{ d.texto }}”</p>
+              </blockquote>
+              <figcaption class="depoimento__autor">
+                <span class="depoimento__nome">{{ d.nome }}</span>
+                <span class="depoimento__id">{{ d.identificacao }}</span>
+                {% if d.linkedin %}
+                  <a class="depoimento__linkedin" href="{{ d.linkedin }}" rel="noopener">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    LinkedIn<span class="visualmente-oculto"> de {{ d.nome }}</span>
+                  </a>
+                {% endif %}
+              </figcaption>
+            </div>
+          </figure>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="carrossel__controles" hidden>
+        <button type="button" class="carrossel__botao" data-direcao="-1" aria-controls="trilho-depoimentos">
+          <span aria-hidden="true">←</span><span class="visualmente-oculto">Depoimentos anteriores</span>
+        </button>
+        <button type="button" class="carrossel__botao" data-direcao="1" aria-controls="trilho-depoimentos">
+          <span aria-hidden="true">→</span><span class="visualmente-oculto">Próximos depoimentos</span>
+        </button>
+      </div>
     </div>
+    {{ c.pendente("fotos e links do LinkedIn das pessoas dos depoimentos (o link só aparece quando for preenchido).", site.mostrarPendencias) }}
   </div>
   <script src="/scripts/depoimentos.js" defer></script>
+  <script src="/scripts/carrossel.js" defer></script>
 </section>
 
 <section class="secao secao--vinho contato" id="contato" aria-labelledby="titulo-contato" tabindex="-1">

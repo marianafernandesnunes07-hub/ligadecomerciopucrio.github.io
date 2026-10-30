@@ -133,6 +133,23 @@ collections:
               - { label: "Nome", name: nome, widget: string }
               - { label: "Cargo", name: cargo, widget: string }
               - { label: "Foto", name: foto, widget: image, media_folder: /src/imagens/diretoria, public_folder: /imagens/diretoria }
+      - name: membros
+        label: "Membros (página Membros)"
+        file: src/_dados/membros.json
+        fields:
+          - { label: "Gestão (ex.: 2026.2)", name: gestao, widget: string }
+          - label: "Grupos de trabalho"
+            name: grupos
+            widget: list
+            fields:
+              - { label: "Área (ex.: Conteúdo)", name: area, widget: string }
+              - label: "Membros"
+                name: membros
+                widget: list
+                fields:
+                  - { label: "Nome", name: nome, widget: string }
+                  - { label: "Curso e período (opcional)", name: curso, widget: string, required: false }
+                  - { label: "Foto (quadrada, se possível)", name: foto, widget: image, required: false, media_folder: /src/imagens/membros, public_folder: /imagens/membros }
       - name: depoimentos
         label: "Depoimentos"
         file: src/_dados/depoimentos.json
@@ -145,7 +162,8 @@ collections:
               - { label: "Nome", name: nome, widget: string }
               - { label: "Identificação", name: identificacao, widget: string }
               - { label: "Texto", name: texto, widget: text }
-              - { label: "Foto (opcional; sem foto aparecem as iniciais)", name: foto, widget: image, required: false, media_folder: /src/imagens/depoimentos, public_folder: /imagens/depoimentos }
+              - { label: "Foto (de preferência na vertical)", name: foto, widget: image, required: false, media_folder: /src/imagens/depoimentos, public_folder: /imagens/depoimentos }
+              - { label: "LinkedIn (link completo, opcional)", name: linkedin, widget: string, required: false }
       - name: atividades
         label: "Atividades das áreas (Nossas Áreas)"
         file: src/_dados/atividades.json
