@@ -1,0 +1,14 @@
+{
+  "gestao": "2026.2",
+  "membros": [
+    { "nome": "Maria Clara Villanueva", "cargo": "Presidente", "foto": "/imagens/diretoria/maria-clara-villanueva.jpg" },
+    { "nome": "Antonella Chacar", "cargo": "Vice-Presidente", "foto": "/imagens/diretoria/antonella-chacar.jpg" },
+    { "nome": "Isaque Augusto", "cargo": "Diretor de Conteúdo", "foto": "/imagens/diretoria/isaque-augusto.jpg" },
+    { "nome": "Ana Clara Fialho", "cargo": "Diretora de Conteúdo", "foto": "/imagens/diretoria/ana-clara-fialho.jpg" },
+    { "nome": "Sarah Liz Moraes", "cargo": "Diretora de Marketing", "foto": "/imagens/diretoria/sarah-liz-moraes.jpg" },
+    { "nome": "Laura Leite", "cargo": "Diretora de Marketing", "foto": "/imagens/diretoria/laura-leite.jpg" },
+    { "nome": "Matheus Lee", "cargo": "Diretor de Extensão", "foto": "/imagens/diretoria/matheus-lee.jpg" },
+    { "nome": "Joice Bezerra", "cargo": "Diretora de Extensão", "foto": "/imagens/diretoria/joice-bezerra.jpg" },
+    { "nome": "Gabriel Magno", "cargo": "Diretor de Recursos Humanos", "foto": "/imagens/diretoria/gabriel-magno.jpg" }
+  ]
+}

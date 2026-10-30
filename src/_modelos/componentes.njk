@@ -1,0 +1,47 @@
+{# Peças reaproveitadas em várias páginas. Importe com:
+   {% import "componentes.njk" as c %} e use {{ c.cardPost(post) }}. #}
+
+{# Card de publicação: categoria, título, data, breve descrição e "Leia mais". #}
+{% macro cardPost(post, nomeCategoria) %}
+<article class="card card--post" data-categoria="{{ post.data.categoria }}"
+  data-busca="{{ (post.data.titulo + ' ' + (post.data.resumo or '') + ' ' + (post.data.autores | juntarNomes) + ' ' + (post.data.empresa or '')) | lower }}">
+  {% if post.data.capa %}
+    <img class="card__imagem" src="{{ post.data.capa }}" alt="" loading="lazy" width="600" height="338">
+  {% endif %}
+  <div class="card__corpo">
+    <p class="card__categoria">{{ nomeCategoria }}</p>
+    <h3 class="card__titulo"><a href="{{ post.url }}">{{ post.data.titulo }}</a></h3>
+    <p class="card__meta">
+      <time datetime="{{ post.data.data | dataISO }}">{{ post.data.data | dataBR }}</time>
+      {% if post.data.empresa %} · {{ post.data.empresa }}{% endif %}
+      {% if post.data.autores and post.data.autores.length %}<br>Por {{ post.data.autores | juntarNomes }}{% endif %}
+    </p>
+    {% if post.data.resumo %}<p class="card__texto">{{ post.data.resumo | resumir(200) }}</p>{% endif %}
+    {# O "aria-hidden" evita que o leitor de tela repita o título: o link do título já leva ao post. #}
+    <a class="card__leia" href="{{ post.url }}" aria-hidden="true" tabindex="-1">Leia mais</a>
+  </div>
+</article>
+{% endmacro %}
+
+{# Card de evento: título, data, convidados ou instituição, descrição e foto. #}
+{% macro cardEvento(evento) %}
+<article class="card card--evento">
+  {% if evento.data.foto %}
+    <img class="card__imagem" src="{{ evento.data.foto }}" alt="{{ evento.data.descricaoFoto or '' }}" loading="lazy" width="600" height="338">
+  {% endif %}
+  <div class="card__corpo">
+    <h3 class="card__titulo">{{ evento.data.titulo }}</h3>
+    <p class="card__meta">
+      <time datetime="{{ evento.data.data | dataISO }}">{{ evento.data.data | dataBR("mes") if evento.data.soMesAno else evento.data.data | dataBR }}</time>
+      {% if evento.data.convidados %} · {{ evento.data.convidados }}{% endif %}
+    </p>
+    <div class="card__texto">{{ evento.content | safe }}</div>
+  </div>
+</article>
+{% endmacro %}
+
+{# Aviso de informação que ainda falta. Some do site quando
+   "mostrarPendencias" for false em src/_dados/site.json. #}
+{% macro pendente(texto, mostrar) %}
+{% if mostrar %}<p class="pendente"><strong>A completar:</strong> {{ texto }}</p>{% endif %}
+{% endmacro %}

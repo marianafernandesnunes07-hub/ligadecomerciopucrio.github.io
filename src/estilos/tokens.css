@@ -1,0 +1,48 @@
+/* =========================================================
+   TOKENS: as "variáveis" da identidade visual.
+   Para mudar uma cor ou fonte no site inteiro, mude AQUI.
+   ========================================================= */
+:root {
+  /* Cores da marca (documento de requisitos, seção 5.1) */
+  --vinho: #690c0b;          /* cor predominante: fundos, títulos */
+  --vinho-2: #7c0023;        /* segundo tom de vinho */
+  --laranja: #f48337;        /* destaque gráfico (linhas, detalhes) */
+  --laranja-2: #fd7e14;      /* segundo tom de laranja */
+  /* PROVISÓRIO: o documento cita amarelo, mas sem código.
+     Este tom foi tirado do amarelo do logo atual. Trocar quando a marca definir. */
+  --amarelo: #eead15;
+
+  /* Laranja escurecido para TEXTO sobre fundo claro.
+     O laranja da marca não tem contraste suficiente para texto pequeno (regra WCAG AA). */
+  --laranja-texto: #a8460a;
+
+  /* Neutros */
+  --tinta: #1f1a1a;          /* texto principal */
+  --tinta-suave: #5b5050;    /* texto secundário */
+  --papel: #ffffff;          /* fundo principal */
+  --papel-2: #faf6f1;        /* fundo das seções claras */
+  --linha: #e6ddd5;          /* bordas */
+
+  /* Tipografia */
+  --fonte-titulo: "Fraunces", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Tamanhos de texto (crescem um pouco em telas grandes) */
+  --t-pequeno: 0.875rem;
+  --t-base: 1.0625rem;
+  --t-medio: 1.25rem;
+  --t-grande: clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);
+  --t-enorme: clamp(2.2rem, 1.4rem + 3.6vw, 4rem);
+
+  /* Espaçamentos */
+  --e-1: 0.5rem;
+  --e-2: 1rem;
+  --e-3: 1.5rem;
+  --e-4: 2.5rem;
+  --e-5: clamp(3.5rem, 2.5rem + 4vw, 6rem); /* espaço entre seções */
+
+  --largura-max: 72rem;
+  --largura-texto: 42rem;
+  --raio: 4px;
+  --sombra: 0 1px 2px rgb(31 26 26 / 0.06), 0 8px 24px rgb(31 26 26 / 0.06);
+}

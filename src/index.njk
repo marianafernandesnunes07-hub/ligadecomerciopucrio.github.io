@@ -1,0 +1,142 @@
+---
+layout: base.njk
+---
+{% import "componentes.njk" as c %}
+{# PÁGINA INICIAL. Ordem definida no documento: apresentação, destaques,
+   diretoria, depoimentos e contato. #}
+
+<section class="abertura">
+  <div class="container abertura__interno">
+    <p class="sobretitulo">{{ site.instituicao }}</p>
+    <h1 class="abertura__titulo">{{ site.nome }}</h1>
+    <p class="abertura__texto">De alunos para alunos, desde 2019.</p>
+    <div class="abertura__acoes">
+      <a class="botao botao--claro" href="/conteudos/">Ler nossas publicações</a>
+      <a class="botao botao--contorno-claro" href="#contato">Entre em contato</a>
+    </div>
+  </div>
+</section>
+
+<section class="secao" aria-labelledby="quem-somos">
+  <div class="container grade-2">
+    <div>
+      <h2 id="quem-somos" class="titulo-secao">Quem somos</h2>
+    </div>
+    <div class="texto-longo">
+      <p>A Liga de Comércio e Negócios Internacionais é uma iniciativa estudantil vinculada ao Instituto de Relações Internacionais da PUC-Rio, criada em 2019 com o propósito de aproximar os estudantes do universo do comércio internacional.</p>
+      <p>Em 2025, ampliamos nosso escopo de atuação para incorporar também os negócios internacionais, acompanhando a conexão entre mercados, empresas e as transformações do cenário global. Essa mudança foi acompanhada pela evolução da nossa identidade e pela ampliação dos temas que orientam nossas atividades.</p>
+      <p>Funcionamos como um espaço de desenvolvimento acadêmico e profissional, no qual os membros produzem análises e artigos, desenvolvem projetos e participam de experiências que aproximam o conhecimento universitário da realidade do mercado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao secao--clara" aria-labelledby="proposito">
+  <div class="container grade-2">
+    <div>
+      <h2 id="proposito" class="titulo-secao">Nosso Propósito</h2>
+    </div>
+    <div class="texto-longo">
+      <p>No formato de projeto realizado de alunos para alunos, o propósito da Liga de Comércio e Negócios Internacionais do IRI PUC-Rio consiste em ampliar a experiência dos membros nos setores comercial e empresarial da indústria. Assim, fortalecendo competências necessárias para a atuação na área do comércio internacional e fomentando a discussão de eventuais problematizações, inovações e outros assuntos relacionados à gestão de negócios.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao" aria-labelledby="valores">
+  <div class="container">
+    <h2 id="valores" class="titulo-secao">Nossos Valores</h2>
+    <p class="introducao">A LCNI é orientada por três valores que norteiam nossas atividades, nossas relações e nossas decisões: Comunidade, Visão de Futuro e Determinação.</p>
+    <ol class="valores">
+      <li class="valor">
+        <h3>Comunidade</h3>
+        <p>Acreditamos que o aprendizado se fortalece por meio da troca. Valorizamos a cooperação, a construção de relações, o trabalho em equipe e um ambiente no qual os membros possam compartilhar conhecimentos, desenvolver competências e ampliar sua rede de contatos.</p>
+      </li>
+      <li class="valor">
+        <h3>Visão de Futuro</h3>
+        <p>Buscamos construir uma Liga que evolua continuamente, amplie seu impacto e crie oportunidades para as próximas gerações de membros. Valorizamos o desenvolvimento de novas lideranças, a continuidade dos projetos e a construção de parcerias que fortaleçam nossa atuação acadêmica e profissional.</p>
+      </li>
+      <li class="valor">
+        <h3>Determinação</h3>
+        <p>Valorizamos a iniciativa, a responsabilidade e o comprometimento com aquilo que nos propomos a realizar. Incentivamos os membros a transformar ideias em projetos, assumir desafios e contribuir ativamente para o desenvolvimento da Liga.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+{# DESTAQUES: as duas visitas guiadas e a Semana de Workshops.
+   Os textos das visitas vêm dos próprios eventos (src/eventos/visitas-guiadas). #}
+<section class="secao secao--vinho" aria-labelledby="destaques">
+  <div class="container">
+    <h2 id="destaques" class="titulo-secao">Destaques</h2>
+    <div class="grade-cards grade-cards--3">
+      {% for evento in collections.eventos | daCategoria("visitas-guiadas") %}
+        {% if evento.data.destaque %}
+        <article class="destaque">
+          {% if evento.data.foto %}<img src="{{ evento.data.foto }}" alt="{{ evento.data.descricaoFoto or '' }}" loading="lazy">{% endif %}
+          <p class="destaque__tipo">Visita guiada · <time datetime="{{ evento.data.data | dataISO }}">{{ evento.data.data | dataBR("mes") }}</time></p>
+          <h3>{{ evento.data.titulo }}</h3>
+          <div>{{ evento.content | safe }}</div>
+        </article>
+        {% endif %}
+      {% endfor %}
+      <article class="destaque">
+        <p class="destaque__tipo">Evento</p>
+        <h3>Semana de Workshops</h3>
+        <p>A Semana de Workshops reúne atividades temáticas voltadas ao aprofundamento de conhecimentos e ao desenvolvimento dos membros da LCNI. Por meio de encontros e atividades práticas, a iniciativa promove a troca de experiências e aproxima os estudantes de temas relevantes para o comércio e os negócios internacionais.</p>
+        {{ c.pendente("data da edição, temas abordados e convidados ou facilitadores.", site.mostrarPendencias) }}
+      </article>
+    </div>
+    <p class="destaques__mais"><a class="link-claro" href="/eventos/">Ver todos os eventos</a></p>
+  </div>
+</section>
+
+{# DIRETORIA: edite nomes, cargos e fotos em src/_dados/diretoria.json. #}
+<section class="secao" aria-labelledby="diretoria">
+  <div class="container">
+    <h2 id="diretoria" class="titulo-secao">Diretoria {{ diretoria.gestao }}</h2>
+    <ul class="diretoria">
+      {% for pessoa in diretoria.membros %}
+        <li class="pessoa">
+          <img src="{{ pessoa.foto }}" alt="Foto de {{ pessoa.nome }}" loading="lazy" width="300" height="300">
+          <p class="pessoa__nome">{{ pessoa.nome }}</p>
+          <p class="pessoa__cargo">{{ pessoa.cargo }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{# DEPOIMENTOS: textos em src/_dados/depoimentos.json.
+   O script depoimentos.js corta os textos longos e cria o botão "Ler depoimento completo". #}
+<section class="secao secao--clara" aria-labelledby="depoimentos">
+  <div class="container">
+    <h2 id="depoimentos" class="titulo-secao">Depoimentos</h2>
+    <div class="grade-cards grade-cards--3">
+      {% for d in depoimentos %}
+        <figure class="depoimento">
+          <blockquote class="depoimento__texto" id="depoimento-{{ loop.index }}">
+            <p>“{{ d.texto }}”</p>
+          </blockquote>
+          <figcaption>
+            <span class="depoimento__nome">{{ d.nome }}</span>
+            <span class="depoimento__id">{{ d.identificacao }}</span>
+          </figcaption>
+        </figure>
+      {% endfor %}
+    </div>
+  </div>
+  <script src="/scripts/depoimentos.js" defer></script>
+</section>
+
+<section class="secao secao--vinho contato" id="contato" aria-labelledby="titulo-contato" tabindex="-1">
+  <div class="container contato__interno">
+    <h2 id="titulo-contato" class="titulo-secao">Entre em contato</h2>
+    <p class="contato__chamada">Dúvidas, comentários ou vontade de entrar na LCNI?</p>
+    <p>Pode mandar uma mensagem por qualquer uma das nossas plataformas que responderemos o mais rápido possível!</p>
+    <ul class="contato__canais">
+      <li><span class="contato__rotulo">E-mail</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      <li><span class="contato__rotulo">Instagram</span><a href="{{ site.instagram.url }}" rel="noopener">{{ site.instagram.usuario }}</a></li>
+      <li><span class="contato__rotulo">LinkedIn</span><a href="{{ site.linkedin.url }}" rel="noopener">{{ site.linkedin.nome }}</a></li>
+    </ul>
+    <a class="botao botao--claro" href="mailto:{{ site.email }}">Entre em contato</a>
+  </div>
+</section>

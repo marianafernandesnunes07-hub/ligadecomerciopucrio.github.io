@@ -1,0 +1,170 @@
+# Configuração do painel de publicação (Sveltia CMS).
+# Cada "collection" vira um item no menu do painel, com um formulário.
+# O painel salva os arquivos direto no GitHub; o site é publicado sozinho em seguida.
+
+backend:
+  name: github
+  repo: marianafernandesnunes07-hub/ligadecomerciopucrio
+  branch: main
+  commit_messages:
+    create: "Novo conteúdo: {{slug}}"
+    update: "Atualiza: {{slug}}"
+    delete: "Remove: {{slug}}"
+    uploadMedia: "Envia imagem: {{path}}"
+
+locale: pt
+site_url: https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio/
+
+# Onde as imagens enviadas pelo painel ficam guardadas.
+media_folder: src/imagens/posts
+public_folder: /imagens/posts
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: artigos
+    label: "Artigos"
+    label_singular: "Artigo"
+    folder: src/conteudos/artigos
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{titulo}}"
+    identifier_field: titulo
+    summary: "{{titulo}} ({{data}})"
+    sortable_fields: [data, titulo]
+    fields: &campos_post
+      - { label: "Título", name: titulo, widget: string }
+      - { label: "Data de publicação", name: data, widget: datetime, format: "YYYY-MM-DD", time_format: false, date_format: "DD/MM/YYYY" }
+      - { label: "Autores", name: autores, widget: list, required: false, hint: "Um nome por item." }
+      - { label: "Breve descrição (aparece no card)", name: resumo, widget: text, hint: "Duas ou três frases." }
+      - { label: "Imagem de capa", name: capa, widget: image, required: false }
+      - { label: "Descrição da imagem (acessibilidade)", name: descricaoCapa, widget: string, required: false, hint: "Diga o que aparece na imagem, para quem usa leitor de tela." }
+      - { label: "Texto", name: body, widget: markdown }
+
+  - name: analise-de-conjuntura
+    label: "Análise de Conjuntura"
+    label_singular: "Análise de Conjuntura"
+    folder: src/conteudos/analise-de-conjuntura
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{titulo}}"
+    identifier_field: titulo
+    summary: "{{titulo}} ({{data}})"
+    sortable_fields: [data, titulo]
+    fields: *campos_post
+
+  - name: business-case
+    label: "Business Case"
+    label_singular: "Business Case"
+    folder: src/conteudos/business-case
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{titulo}}"
+    identifier_field: titulo
+    summary: "{{titulo}} ({{data}})"
+    sortable_fields: [data, titulo]
+    fields:
+      - { label: "Título", name: titulo, widget: string }
+      - { label: "Empresa ou tema analisado", name: empresa, widget: string, required: false }
+      - { label: "Data de publicação", name: data, widget: datetime, format: "YYYY-MM-DD", time_format: false, date_format: "DD/MM/YYYY" }
+      - { label: "Autores", name: autores, widget: list, required: false }
+      - { label: "Breve descrição (aparece no card)", name: resumo, widget: text }
+      - { label: "Imagem de capa", name: capa, widget: image, required: false }
+      - { label: "Descrição da imagem (acessibilidade)", name: descricaoCapa, widget: string, required: false }
+      - { label: "Texto", name: body, widget: markdown }
+
+  - name: em-alta
+    label: "Em Alta"
+    label_singular: "Em Alta"
+    folder: src/conteudos/em-alta
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{titulo}}"
+    identifier_field: titulo
+    summary: "{{titulo}} ({{data}})"
+    sortable_fields: [data, titulo]
+    fields: *campos_post
+
+  - name: eventos-visitas-guiadas
+    label: "Eventos: Visitas Guiadas"
+    label_singular: "Visita guiada"
+    folder: src/eventos/visitas-guiadas
+    create: true
+    slug: "{{year}}-{{month}}-{{titulo}}"
+    identifier_field: titulo
+    fields: &campos_evento
+      - { label: "Título", name: titulo, widget: string }
+      - { label: "Data", name: data, widget: datetime, format: "YYYY-MM-DD", time_format: false, date_format: "DD/MM/YYYY" }
+      - { label: "Mostrar só mês e ano", name: soMesAno, widget: boolean, default: false }
+      - { label: "Convidados ou instituição", name: convidados, widget: string, required: false }
+      - { label: "Foto", name: foto, widget: image, required: false, media_folder: /src/imagens/eventos, public_folder: /imagens/eventos }
+      - { label: "Descrição da foto (acessibilidade)", name: descricaoFoto, widget: string, required: false }
+      - { label: "Mostrar nos Destaques da página inicial", name: destaque, widget: boolean, default: false }
+      - { label: "Descrição", name: body, widget: markdown }
+
+  - name: eventos-palestras
+    label: "Eventos: Palestras"
+    label_singular: "Palestra"
+    folder: src/eventos/palestras
+    create: true
+    slug: "{{year}}-{{month}}-{{titulo}}"
+    identifier_field: titulo
+    fields: *campos_evento
+
+  - name: eventos-semana
+    label: "Eventos: Semana de Comércio e Negócios Internacionais"
+    label_singular: "Atividade da Semana"
+    folder: src/eventos/semana
+    create: true
+    slug: "{{year}}-{{month}}-{{titulo}}"
+    identifier_field: titulo
+    fields: *campos_evento
+
+  - name: institucional
+    label: "Institucional"
+    files:
+      - name: diretoria
+        label: "Diretoria"
+        file: src/_dados/diretoria.json
+        fields:
+          - { label: "Gestão (ex.: 2026.2)", name: gestao, widget: string }
+          - label: "Membros"
+            name: membros
+            widget: list
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Cargo", name: cargo, widget: string }
+              - { label: "Foto", name: foto, widget: image, media_folder: /src/imagens/diretoria, public_folder: /imagens/diretoria }
+      - name: depoimentos
+        label: "Depoimentos"
+        file: src/_dados/depoimentos.json
+        fields:
+          - label: "Depoimentos"
+            name: depoimentos
+            widget: list
+            root: true
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Identificação", name: identificacao, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+      - name: site
+        label: "Contatos e configurações"
+        file: src/_dados/site.json
+        fields:
+          - { label: "Nome da Liga", name: nome, widget: string }
+          - { label: "Sigla", name: sigla, widget: string }
+          - { label: "Instituição", name: instituicao, widget: string }
+          - { label: "Descrição curta (Google e redes)", name: descricao, widget: text }
+          - { label: "E-mail", name: email, widget: string }
+          - label: "Instagram"
+            name: instagram
+            widget: object
+            fields:
+              - { label: "Usuário", name: usuario, widget: string }
+              - { label: "Link", name: url, widget: string }
+          - label: "LinkedIn"
+            name: linkedin
+            widget: object
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Link", name: url, widget: string }
+          - { label: "Logo", name: logo, widget: image, media_folder: /src/imagens/marca, public_folder: /imagens/marca }
+          - { label: "Mostrar avisos de conteúdo pendente", name: mostrarPendencias, widget: boolean }

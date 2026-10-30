@@ -1,0 +1,47 @@
+---
+titulo: "Artigo - A Constante Guerra Comercial entre China e Estados Unidos"
+data: 2023-10-16
+autores:
+  - "Lecticia Duarte"
+resumo: "Com o final da União Soviética em 1991, que ocasionou o alavancamento dos Estados Unidos para a condição de hegemonia na ordem mundial, mudando completamente sua posição no mundo. Por outro lado, a China vem, cada vez mais, ganhando força e espaço no mundo globalizado, principalmente por conta de seu comércio, até por conta da abertura econômica de seu país, no ano de 1976, algo que vem causando embate entre os dois. Dessa maneira, observando o cenário atual que estas duas potências se encontram, pode-se entender que estes dois países se encontram em constante competição. Muitos, portanto, acreditam que em algum momento possa ocorrer uma reformulação da supremacia mundial, e aí sim, a China virá a tomar o lugar dos Estados Unidos. Assim, pode-se entender que a relação entre os dois é bem extensa, possuindo vários momentos na história."
+capa: /imagens/posts/73762058e8a1428994b43dfdddf58a86.jpeg
+descricaoCapa: ""
+origemWix: https://ligadecomercioiri.wixsite.com/lci-pucrio/post/artigo-a-constante-guerra-comercial-entre-china-e-estados-unidos
+---
+Com o final da União Soviética em 1991, que ocasionou o alavancamento dos Estados Unidos para a condição de hegemonia na ordem mundial, mudando completamente sua posição no mundo. Por outro lado, a China vem, cada vez mais, ganhando força e espaço no mundo globalizado, principalmente por conta de seu comércio, até por conta da abertura econômica de seu país, no ano de 1976, algo que vem causando embate entre os dois. Dessa maneira, observando o cenário atual que estas duas potências se encontram, pode-se entender que estes dois países se encontram em constante competição. Muitos, portanto, acreditam que em algum momento possa ocorrer uma reformulação da supremacia mundial, e aí sim, a China virá a tomar o lugar dos Estados Unidos. Assim, pode-se entender que a relação entre os dois é bem extensa, possuindo vários momentos na história.
+
+Por conta dessa constante competição entre os dois, muitos temem que esta disputa venha a se tornar uma Guerra em breve. Mas o que estas pessoas acabam esquecendo é que isto não é muito difícil e complicado, até pela intimidade que possuem, sendo muito dependentes no que se refere à economia, às Relações Internacionais e ao comércio. Além disso, um conflito entre estes dois países pode causar destruição global, já que ambos são potências nucleares. Dessa forma, pode-se dizer que os dois são “inimigos íntimos”. Mas, mesmo com um embate violento não acontecendo entre os dois, não se pode deixar de falar sobre sua Guerra comercial, que vem preocupando muitos.
+
+No ano de 2019, começou se uma disputa comercial entre estas duas potências, o que gerou uma grande repercussão mundial e a preocupação de vários chefes de Estado. Com a política nacionalista americana, implantada por Donald Trump, o presidente do país na época, o famoso “American First”, marcada por enfatizar o [nacionalismo](https://www.infoescola.com/filosofia/nacionalismo/) econômico americano e o unilateralismo, que rejeita as políticas globais, além de também a crescente do mercado chinês por todo o mundo, causado pela entrada de Deng Xiaoping, que causou reformas que triplicaram o PIB do país, além de melhoras o ensino, estabelecer zonas econômicas e melhoras a industrialização chinesa, também colocando mais infraestrutura por todo país, os dois países estão cada vez mais tomando muito espaço no mundo. Dessa forma, no ano de 2018, os EUA estabeleceram um aumento na tarifa paga pela China para exportar mercadorias para eles, com dois objetivos principais. Primeiro, para que os produtos chineses estando mais caros, os estadunidenses comprariam mais coisas do próprio país, além de também acabar diminuindo o lucro chinês na relação comercial com os Estados Unidos, já que em 2018, os EUA teve um lucro de US$ 120 bilhões em produtos exportados para a China, que, ao contrário deles, arrecadou US$ 539 bilhões em produtos exportados para o país estadunidense. Assim, a China começou a taxar mais os Estados Unidos também, o que fez com que esta Guerra comercial começasse.
+
+Com a chegada da pandemia, esta Guerra comercial acabou ficando cada vez mais intensa. Os EUA tentaram culpar a China, dizendo que deixaram que a pandemia do coronavírus se espalhasse pelo mundo, para que assim eles conseguissem alavancar sua economia e crescer mais que outras potências. Durante esse momento de tensão, os dois decidem assinar um acordo comercial, tentando, dessa forma, manter uma “comunicação próxima”. Este acordo foi assinado no dia 15 de janeiro de 2020 e visava o fim deste combate. Nele, era acordado a suspensão das tarifas sobre os produtos chineses, além de, por parte da China, a promessa de um aumento das importações de produtos agrícolas, energia e bens manufaturados dos Estados Unidos. A China fechou o ano de 2020 com um superávit comercial de US$ 78 bilhões, com um superávit geral de US$ 535 bilhões, um aumento de 27% em relação ao ano anterior. Com isso, no início de 2021, o país estava liderando a Guerra contra os Estados Unidos. Entre vários motivos, um dos maiores, ocasionados por essa expansão chinesa, seria sua gestão durante o período pandêmico, de acordo com Louis Kuijs, um chefe de economia asiática da Oxford Economics, que também fala sobre como os chineses se beneficiaram pela alta demanda de equipamentos eletrônicos, principalmente porque todos estavam trabalhando de casa. Com esse embate entre as duas nações, se teve uma grande substituição de produtores, para assim os dois países não serem tão dependentes na questão do comércio.
+
+Com o “final da pandemia” e o mundo voltando à sua “típica rotina” novamente, voltou o ritmo rápido do comércio mundial, já que durante o período pandêmico isso foi dificultado por diversos fatores. Desse modo, a China e os Estados Unidos, agora possuindo mais opções de fornecedores, acabaram não voltando à mesma leva de relação comercial que possuíam antes disso e do início deste conflito comercial, não tendo sido o maior aliado de comércio dos EUA em 2022, algo que não acontecia desde 2008. Com isso, podemos ver que cada vez mais estas duas potências estão se afastando, o que gera um certo temor na população mundial.
+
+Atualmente, no ano de 2023, a China vem se sentindo “encurralada” pelos Estados Unidos e seus aliados do Pacífico, com a assinatura do pacto Aukus, acordo de segurança unindo Austrália, EUA e Reino unido, criado para proteger tais potências da expansão militar chinesa nessas áreas. Além disso, os Estados Unidos está disposto a defender Taiwan caso o governo chinês realmente tente tomar a ilha. Ademais, a China vem pensando em, junto com o Brics, tentar uma substituição do dólar como moeda universal. Quem falou sobre isso foi o presidente brasilerio Luiz Inácio Lula da Silva (PT), onde em uma tentativa de maior alinhamento com o país asiático, mandou um recado ao país norte-americano, fazendo um discurso contra o dólar, também falando muito sobre o fortalecimento do Brics em geral. Assim, podemos perceber que novamente esta disputa está desbalanceada, com os dois querendo se atacar economicamente, mas agora com um risco geral, já que se tem a possibilidade de algo mais sério acontecer.
+
+Referências:
+
+BRASIL ESCOLA. China x EUA. Disponível em:<https://brasilescola.uol.com.br/guerras/china-x-eua.htm>. Acesso em: 14 abr. 2023.
+
+INVESTE SP. China e EUA: superpotências são principais fontes do superávit e déficit acumulados pelo Brasil no comércio exterior. Disponível em:<https://www.investe.sp.gov.br/noticia/china-e-eua-superpotencias-sao-principais-fontes-do-superavit-e-deficit-acumulados-pelo-brasil-no-comercio-exterior/>. Acesso em: 11 abr. 2023.
+
+INFOESCOLA. Guerra comercial entre China e Estados Unidos. Disponível em:<https://www.infoescola.com/geografia/guerra-comercial-entre-china-e-estados-unidos/>. Acesso em: 12 abr. 2023.
+
+MONITOR DO MERCADO. Acordo comercial entre China e EUA é fraco. Disponível em:<https://monitordomercado.com.br/noticias/26171-acordo-comercial-entre-china-e-eua-fraca>. Acesso em: 13 abr. 2023.
+
+MUNDO EDUCAÇÃO. China. Disponível em:<https://mundoeducacao.uol.com.br/china#:~:text=%C3%89%20considerado%20o%20pa%C3%ADs%20que,produzidas%20ultrapassa%20US%24%2012%20trilh%C3%B5es>. Acesso em: 13 abr. 2023.
+
+SANTOS, Rafael Gonçalves. A Guerra Comercial entre Estados Unidos e China e seus efeitos na economia mundial. 2019. 33 f. Trabalho de Conclusão de Curso (Graduação em Economia) - Insper Instituto de Ensino e Pesquisa, São Paulo, 2019. Disponível em:<https://repositorio.insper.edu.br/handle/11224/3749?gclid=CjwKCAjwitShBhA6EiwAq3RqA0yANqiqrx2iRFmvKlnXGnMGMRvgQ-I-qxjx44QLXisZFV6HVjZcGRoC-WkQAvD_BwE>. Acesso em: 12 abr. 2023.
+
+YOUTUBE. O que está por trás da guerra comercial entre EUA e China? 2019. Disponível em:<https://www.youtube.com/watch?v=XwxUQlDU_xg>. Acesso em: 11 abr. 2023.
+
+LAURA HE. China está ganhando guerra comercial e as exportações nunca foram tão altas. CNN Brasil. Janeiro, 2021.
+
+Disponível em:
+
+<https://www.cnnbrasil.com.br/economia/china-esta-ganhando-guerra-comercial-e-as-exportacoes-nunca-foram-tao-altas/> Acesso em: 14 de Abril.
+
+AFP. Relação comercial entre EUA e a China enfrenta tempestade em meio a Covid e tensão. Folha de Pernambuco. Janeiro, 2023.
+
+Disponível em:<https://www.folhape.com.br/economia/relacao-comercial-entre-eua-e-china-enfrenta-tempestade-em-meio-a/>

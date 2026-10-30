@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+{# Página individual de cada publicação. O texto do post entra em "content". #}
+{% set cat = null %}
+{% for c in categorias.conteudos %}{% if c.id == categoria %}{% set cat = c %}{% endif %}{% endfor %}
+<article class="post">
+  <header class="post__cabecalho container container--texto">
+    <p class="post__categoria"><a href="/conteudos/#{{ categoria }}">{{ cat.nomeCurto or cat.nome }}</a></p>
+    <h1 class="post__titulo">{{ titulo }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ data | dataISO }}">{{ data | dataBR }}</time>
+      {% if empresa %} · {{ empresa }}{% endif %}
+      {% if autores and autores.length %}<br>Por {{ autores | juntarNomes }}{% endif %}
+    </p>
+  </header>
+
+  {% if capa %}
+    <figure class="post__capa container">
+      <img src="{{ capa }}" alt="{{ descricaoCapa or '' }}" width="1200" height="675">
+    </figure>
+  {% endif %}
+
+  <div class="post__texto container container--texto">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post__rodape container container--texto">
+    <a class="botao botao--contorno" href="/conteudos/#{{ categoria }}">Voltar para {{ cat.nomeCurto or cat.nome }}</a>
+  </footer>
+</article>

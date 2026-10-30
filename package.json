@@ -1,0 +1,22 @@
+{
+  "name": "site-lcni-pucrio",
+  "version": "1.0.0",
+  "description": "Site da Liga de Comércio e Negócios Internacionais (LCNI) do IRI PUC-Rio",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marianafernandesnunes07-hub/ligadecomerciopucrio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marianafernandesnunes07-hub/ligadecomerciopucrio/issues"
+  },
+  "homepage": "https://github.com/marianafernandesnunes07-hub/ligadecomerciopucrio#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  },
+  "type": "module",
+  "private": true
+}

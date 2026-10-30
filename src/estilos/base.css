@@ -1,0 +1,114 @@
+/* =========================================================
+   BASE: estilos gerais de texto, links e layout.
+   Escrito "mobile-first": as regras valem para o celular e os
+   blocos @media ajustam para telas maiores.
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Garante que elementos marcados como "hidden" (ex.: cards filtrados) sumam de verdade. */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: var(--t-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--vinho);
+  margin: 0 0 var(--e-2);
+  text-wrap: balance;
+}
+h3 { font-size: var(--t-medio); }
+
+p { margin: 0 0 var(--e-2); }
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--vinho-2); text-decoration-color: var(--laranja); text-underline-offset: 0.2em; text-decoration-thickness: 2px; }
+a:hover { color: var(--vinho); text-decoration-color: var(--vinho); }
+
+/* Foco visível para quem navega pelo teclado (obrigatório na WCAG). */
+:focus-visible {
+  outline: 3px solid var(--laranja-2);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+main:focus, section:focus { outline: none; }
+
+/* Esconde da tela, mas mantém para leitores de tela. */
+.visualmente-oculto {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Link "Pular para o conteúdo": só aparece ao receber foco. */
+.pular-conteudo {
+  position: absolute;
+  left: var(--e-2);
+  top: -4rem;
+  background: var(--vinho);
+  color: #fff;
+  padding: var(--e-1) var(--e-2);
+  z-index: 100;
+}
+.pular-conteudo:focus { top: var(--e-2); }
+
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 48rem) { .container { padding-inline: 2rem; } }
+.container--texto { max-width: calc(var(--largura-texto) + 4rem); }
+
+.secao { padding-block: var(--e-5); }
+.secao--clara { background: var(--papel-2); }
+.secao--vinho { background: var(--vinho); color: #fff; }
+.secao--vinho h2, .secao--vinho h3 { color: #fff; }
+.secao--vinho a:not(.botao) { color: #fff; }
+
+.titulo-secao {
+  font-size: var(--t-grande);
+  position: relative;
+  padding-top: var(--e-2);
+}
+/* Pequena linha laranja acima dos títulos: elemento gráfico discreto. */
+.titulo-secao::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 3rem; height: 3px;
+  background: var(--laranja);
+}
+
+.sobretitulo {
+  font-size: var(--t-pequeno);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.introducao { max-width: var(--largura-texto); font-size: 1.125rem; color: var(--tinta-suave); }
+.secao--vinho .introducao { color: #f6e9e6; }
+
+.texto-longo { max-width: var(--largura-texto); }
+
+.grade-2 { display: grid; gap: var(--e-3); }
+@media (min-width: 56rem) { .grade-2 { grid-template-columns: 1fr 2fr; gap: var(--e-4); } }
+
+.lista { padding-left: 1.2rem; }
+.lista li { margin-bottom: var(--e-1); }
+.lista li::marker { color: var(--laranja-2); }

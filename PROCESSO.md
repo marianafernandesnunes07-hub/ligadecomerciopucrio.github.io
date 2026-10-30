@@ -1,133 +1,66 @@
 # Novo site da LCNI PUC-Rio: diário do processo
 
-Registro das decisões, dados importados e pendências do projeto. Atualizar a cada etapa.
+Registro das decisões, do que foi importado e do que ainda falta. Atualizar a cada etapa.
 
 ## Etapa 0. Levantamento (29/10/2026)
 
-**Fontes usadas**
-- Documento "Novo site da Liga de Comércio e Negócios Internacionais | PUC-Rio" (estrutura, textos e diretrizes).
-- Site atual no Wix: https://ligadecomercioiri.wixsite.com/lci-pucrio
+Fontes: documento "Novo site da Liga de Comércio e Negócios Internacionais | PUC-Rio" e o site antigo no Wix (https://ligadecomercioiri.wixsite.com/lci-pucrio). Estrutura e dúvidas enviadas para a Mari.
 
-**Status:** estrutura e dúvidas enviadas para aprovação. Nenhum código escrito ainda.
+## Etapa 1. Primeira versão completa (30/10/2026)
 
-## Inventário do site atual (Wix)
+A Mari pediu para subir o projeto inteiro. As dúvidas da Etapa 0 ainda não tinham resposta, então as decisões abertas foram tomadas de forma **provisória** (lista abaixo) e o que o documento não informa aparece no site como caixa tracejada **"A completar"**. Nenhum texto institucional foi inventado: todos vêm do documento ou do Wix.
 
-### Páginas existentes
-Página inicial, Publicações (blog), Eventos, Equipe, Contatos.
+### O que foi feito
+- Site em Eleventy + HTML + CSS + JS puro, sem backend. Páginas: Início, Nossas Áreas, Conteúdos (filtros por categoria e busca por palavra-chave), Eventos e página individual de cada post.
+- Painel de publicação (Sveltia CMS) em `/admin/`, com formulários para posts, eventos, diretoria, depoimentos e contatos.
+- Publicação automática no GitHub Pages a cada alteração (`.github/workflows/publicar.yml`).
+- README.md, COMO-PUBLICAR.md (guia para o Marketing) e modelos copiáveis de post e de evento.
+- Conferido: contraste WCAG AA de todas as combinações de cor, menu do celular, navegação por teclado, filtros, busca, layout em 390 px e 1366 px sem rolagem lateral.
 
-### Logo
-- `LCI g1.png` (ainda com a sigla antiga LCI): https://static.wixstatic.com/media/564580_1813d99e8d4f4a07bae7809fd30f6292~mv2.png
+### Migração do Wix
+O texto completo dos posts foi exportado pelo navegador do app (a rede do servidor bloqueia o Wix) e convertido para Markdown.
 
-### Publicações (21 posts no blog, todos com "Por:" e "Resumo:" no início)
-Categorias no Wix: Artigos, Notícias da Semana, Fatos!
+- **109 publicações** migradas com texto integral, data original, capa e imagens internas (2023: 35, 2024: 36, 2025: 21, 2026: 17).
+- 1 post do sitemap do Wix não tinha conteúdo e ficou de fora: `e-commerce-transfronteiriço-compras-internacionais-e-os-desafios-alfandegários`.
+- Autores foram tirados da linha "Por:" / "Texto por:" de cada post. 3 posts não têm essa linha e ficaram sem autor no card.
+- Cada post guarda o endereço antigo no campo `origemWix`.
+- Diretoria 2026.2: nomes, cargos e fotos do Wix.
+- Logo atual (`LCI g1.png`) em `src/imagens/marca/logo.png`.
+- 3 palestras de 2023 cadastradas a partir dos cartazes que estavam na página Eventos do Wix (BRICS com Alexandre Souto, aula com Jonas Vieira, aulão com Carlos Frederico Coelho).
+- Imagens reduzidas para no máximo 1200 px (de 100 MB para cerca de 21 MB).
 
-| Data | Título | Autores |
+### Decisões provisórias (confirmar ou trocar)
+| Tema | Decisão provisória | Onde trocar |
 |---|---|---|
-| 29/07/2026 | A disputa pelos cabos submarinos: infraestrutura invisível do comércio mundial | Mateus Dias Viana; Juliana Sousa; Guilherme Romano |
-| 29/07/2026 | Mercado halal: um caminho estratégico para o crescimento das exportações brasileiras | Luciana Crivellari |
-| 29/07/2026 | A tomada de decisão estratégica de armadores frente às barreiras ao transporte marítimo | Isaque Augusto Couto Santos de Oliveira |
-| 29/07/2026 | Hospitalidade e globalização: a hotelaria como infraestrutura invisível do comércio e dos negócios internacionais | Mateus Dias Viana |
-| 13/07/2026 | Gargalos da competitividade brasileira: uma análise sobre o "custo Brasil" e a internacionalização de médias empresas industriais | Ana Clara Alves Mont'Alvão Fialho |
-| 13/07/2026 | Do agronegócio ao petróleo: os pilares do comércio entre Brasil e Emirados Árabes Unidos | Luciana Crivellari |
-| 02/07/2026 | O movimento de internacionalização da NFL | Andressa Cardoso do Nascimento |
-| 26/06/2026 | O Brasil como hub tecnológico na América Latina | João Daniel Griner |
-| 22/06/2026 | Infrações aduaneiras e responsabilidade do importador no direito brasileiro | Guilherme Romano de Siqueira |
-| 17/06/2026 | Segurança logística e rotas de comércio: as disputas no Estreito de Ormuz e a competitividade das exportações agrícolas e brasileiras | Ana Clara Alves Mont'Alvão Fialho, Isaque Augusto e Luciana Crivellari |
-| 12/06/2026 | Geopolítica da logística e vulnerabilidade do comércio internacional | Isaque Augusto Couto Santos de Oliveira |
-| 11/06/2026 | Geopolítica da atenção: plataformas digitais, algoritmos e poder no século XXI | Mateus Dias Viana |
-| 09/06/2026 | As relações econômicas entre a África e China | Andressa Cardoso do Nascimento |
-| 05/06/2026 | O preço da instabilidade: o comércio marítimo no centro da crise Irã-EUA | Juliana Sousa |
-| 29/05/2026 | Facilitação do comércio, eficiência aduaneira e competitividade internacional: uma análise do artigo 10 do AFC | Flávia Luíza Rodrigues |
-| 25/05/2026 | O despacho aduaneiro de importação no Brasil e sua modernização com a DUIMP | Guilherme Romano de Siqueira |
-| 19/05/2026 | Fintechs e pagamentos internacionais: simplificando transações globais | Andressa Cardoso, Amelie e Flávia Rodrigues |
-| 19/12/2025 | Introdução ao comércio marítimo | Juliana Sousa |
-| 17/12/2025 | A erosão da hegemonia do dólar: caminhos e desafios da desdolarização do comércio internacional | Mateus Dias Viana, Bento Pimentel, Juliana Sousa |
-| 12/12/2025 | O Acordo de Parceria Mercosul-União Europeia e seu desenvolvimento durante os 25 anos | Andressa Cardoso do Nascimento |
+| Stack | Eleventy + Sveltia CMS + GitHub Pages | |
+| Nome e sigla | LCNI, como no documento. Logo ainda é o antigo, com "LCI" | `src/_dados/site.json`, `src/imagens/marca/logo.png` |
+| Amarelo | `#eead15`, tirado do amarelo do logo atual | `src/estilos/tokens.css` |
+| Vinho / laranja | `#690c0b` principal, `#7c0023` em links e hover; `#f48337` em detalhes gráficos, `#fd7e14` no foco do teclado. Para texto laranja sobre fundo claro foi criado `#a8460a`, porque o laranja da marca não passa no contraste | `src/estilos/tokens.css` |
+| Tipografia | Fraunces (títulos) e Source Sans 3 (texto), gratuitas no Google Fonts | `src/estilos/tokens.css` e `src/_modelos/base.njk` |
+| Instagram | @ligadecomercio.iri (o que aparece na página de Contatos do Wix) | `src/_dados/site.json` |
+| LinkedIn | https://www.linkedin.com/company/ligadecomercio/ (link do Wix sem os parâmetros de administrador) | `src/_dados/site.json` |
+| Categorias dos posts antigos | "Notícias da Semana" → Análise de Conjuntura (13); "Fatos!" → Em Alta (9); todo o resto → Artigos (87). Business Case começa vazio | mover o arquivo entre as pastas de `src/conteudos/` |
+| Depoimentos | Texto original do documento, mantendo "LCI" | `src/_dados/depoimentos.json` |
+| Redes individuais da diretoria | Não usadas (o link da presidente no Wix apontava para outra pessoa) | |
+| Conteúdo do Wix fora do documento | Não migrado: galeria Membros 2025.2, formulário de parceiros, formulário de contato, endereço da sede | |
+| Destaques | Visitas C&A (dez/2024) e Rio Brasil Terminal (set/2025), textos da seção 4.1 do documento | `src/eventos/visitas-guiadas/` |
+| Títulos dos posts | Mantidos como no Wix, inclusive os em caixa alta e os com prefixo "Artigo -" | |
+| Duplicados | "Reconstruindo o Comércio Internacional com o Meio Ambiente" existe duas vezes no Wix (versões um pouco diferentes). As duas foram migradas | apagar uma em `src/conteudos/artigos/` |
 
-Obs.: o Wix mostra só dia e mês nos posts de 2026; o ano foi deduzido pela ordem da lista. Texto completo e imagens de capa de cada post serão baixados na etapa de migração.
+### Pendências (aparecem como "A completar" no site)
+1. Semana de Workshops: data, temas e convidados (Destaques e página Eventos).
+2. Palestras de 2024 em diante e o workshop de 1 dia com 4 profissionais.
+3. Texto de introdução geral da página Eventos.
+4. Descrições de Identidade Visual, Business Case e Em Alta no bloco Marketing (Nossas Áreas).
+5. Fotos das visitas guiadas (C&A e Rio Brasil Terminal).
+6. Logo definitivo da LCNI.
+7. Autorização dos depoimentos para publicação.
+8. Frase incompleta do documento sobre os cards de Business Case. Por enquanto o card mostra título, empresa ou tema (campo opcional), data, autores e descrição.
 
-### Diretoria 2026.2 (página Equipe)
-| Cargo | Nome |
-|---|---|
-| Presidente | Maria Clara Villanueva |
-| Vice-Presidente | Antonella Chacar |
-| Diretor de RH | Gabriel Magno |
-| Diretor de Conteúdo | Isaque Augusto |
-| Diretora de Conteúdo | Ana Clara Fialho |
-| Diretora de Marketing | Sarah Liz Moraes |
-| Diretora de Marketing | Laura Leite |
-| Diretor de Extensão | Matheus Lee |
-| Diretora de Extensão | Joice Bezerra |
+Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: false` em `src/_dados/site.json`.
 
-Fotos individuais disponíveis no Wix.
-
-### Eventos
-A página do Wix tem apenas 3 imagens, sem texto. Os dados das visitas (C&A, dez/2024; Rio Brasil Terminal, set/2025) vêm do documento.
-
-### Contato
-- E-mail: ligadecomercio.iri@gmail.com
-- Instagram: dois perfis aparecem (@lci.pucrio no topo, @ligadecomercio.iri no rodapé e em Contatos)
-- LinkedIn: link atual é de visualização de administrador (`/mycompany/?viewAsMember=true`)
-- Endereço: Rua Marquês de São Vicente, 225, Vila dos Diretórios, Casa 20, Gávea, Rio de Janeiro - RJ
-
-### Conteúdo do Wix que o documento não prevê
-- Galeria "Membros 2025.2" (25 fotos)
-- Formulário "Seja nosso parceiro"
-- Formulário de contato e endereço da sede
-
-## Proposta técnica (aguardando aprovação)
-
-- **Stack:** Eleventy (11ty) + HTML + CSS puro (sem Tailwind) + JS. Cada post é um arquivo `.md` que vira card automaticamente.
-- **Publicação:** painel Sveltia CMS em `/admin`. O marketing preenche um formulário (título, categoria, data, autores, capa, texto) e o painel salva no GitHub. Ninguém mexe em código.
-- **Hospedagem:** GitHub Pages ou Cloudflare Pages, gratuita e sem backend.
-- **Idioma de arquivos e pastas:** português.
-- **GitHub:** a Mari precisa conectar o GitHub em claude.ai (Configurações → Conectores) e criar um repositório vazio, de preferência em conta ou organização da liga. Depois disso, enviar o `dono/nome-do-repo`.
-
-### Estrutura de pastas proposta
-```
-lcni-site/
-├── README.md               # o que é, rodar local, publicar, criar post
-├── COMO-PUBLICAR.md        # guia de 1 página para o marketing
-├── PROCESSO.md             # este diário
-├── package.json
-├── eleventy.config.js
-├── .github/workflows/publicar.yml
-├── admin/                  # painel de publicação (index.html, config.yml)
-└── src/
-    ├── _dados/             # site.json, diretoria.json, depoimentos.json, destaques.json
-    ├── _modelos/           # base, post, evento, cabeçalho, rodapé, card
-    ├── index.njk  nossas-areas.njk  conteudos.njk  eventos.njk
-    ├── conteudos/          # artigos/, analise-de-conjuntura/, business-case/, em-alta/, _modelo-post.md
-    ├── eventos/            # visitas-guiadas/, palestras/, semana/, _modelo-evento.md
-    ├── imagens/
-    ├── estilos/            # tokens.css, base.css, componentes.css, paginas.css
-    └── scripts/            # menu.js, filtros-busca.js, depoimentos.js
-```
-
-## Decisões
-(Preencher conforme forem confirmadas.)
-
-## Pendências (dúvidas enviadas em 29/10/2026)
-
-**Base**
-1. Aprovar a stack acima, com o painel de publicação.
-2. Existe domínio próprio? Sem domínio, o endereço será do tipo `nome.github.io/lcni`. O Wix sai do ar depois?
-
-**Identidade**
-3. O nome é LCI ou LCNI? O logo do Wix usa "LCI" e o documento lista o "logo definitivo" como pendente.
-4. Cores: o amarelo foi citado sem código. Há dois vinhos (#690c0b, #7c0023) e dois laranjas (#f48337, #fd7e14): qual é o principal de cada? Tipografia não definida: posso propor?
-5. Os depoimentos citam "LCI": manter o texto original?
-
-**Conteúdo migrado**
-6. Categorias do Wix (Artigos, Notícias da Semana, Fatos!) x novas. Os 21 posts parecem todos artigos. Análise de Conjuntura, Business Case e Em Alta têm publicações em algum lugar ou começam vazias?
-7. Migrar texto completo e capa de cada post? O autor real será separado do texto ("Por: …") num campo próprio.
-8. Diretoria: seguir os nomes do Wix? Os links sociais da presidente apontam para outra pessoa (Larissa Alves). Sugestão: não usar redes individuais.
-9. Instagram oficial: @lci.pucrio ou @ligadecomercio.iri? Falta o link público do LinkedIn.
-10. Descartar o que o documento não prevê: galeria Membros 2025.2, formulário de parceiros, formulário de contato, endereço da sede?
-
-**Lacunas do documento (não inventar texto)**
-11. Destaques: as duas visitas são C&A (dez/2024) e Rio Brasil Terminal (set/2025)?
-12. Faltam: dados da Semana de Workshops; registros de palestras (incluindo o workshop com 4 profissionais); introdução geral da página Eventos; descrições de Identidade Visual, Business Case e Em Alta no bloco Marketing; frase incompleta sobre organização dos cards de Business Case.
-13. Os depoimentos já têm autorização para publicação?
-
-**Próximo passo:** com as respostas, atualizar este arquivo e começar o código pelo cabeçalho e pela página inicial. Pendências entram como espaço marcado, nunca como texto inventado.
+### Para colocar no ar
+1. GitHub → Settings → Pages → Source: **GitHub Actions**.
+2. Conferir o site em https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio/
+3. Testar o painel em `/admin/` com um token (passo a passo no COMO-PUBLICAR.md).
+4. Avaliar se o repositório deve passar para uma conta ou organização da Liga, para não depender de uma pessoa só quando a gestão mudar.

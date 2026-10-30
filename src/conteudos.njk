@@ -1,0 +1,50 @@
+---
+layout: base.njk
+titulo: Conteúdos
+permalink: /conteudos/
+---
+{% import "componentes.njk" as c %}
+<header class="cabecalho-pagina">
+  <div class="container">
+    <h1>Conteúdos</h1>
+    <p class="introducao">A produção de conhecimento é uma parte central da atuação da LCNI, desenvolvida pelos membros dos GTs de Conteúdo e Marketing. Por meio de pesquisas, análises e estudos de caso, produzimos materiais sobre fenômenos, tendências e estratégias que influenciam o comércio e os negócios internacionais. Buscamos conectar o conhecimento teórico à realidade do mercado, estimulando o pensamento crítico e ampliando a compreensão das dinâmicas que moldam o ambiente global de negócios.</p>
+    <p class="introducao">Explore nossas publicações e conheça as diferentes perspectivas desenvolvidas pelos membros da Liga.</p>
+  </div>
+</header>
+
+{# Filtros e busca. Funcionam com o script filtros-busca.js.
+   Sem JavaScript, a página continua mostrando todas as seções. #}
+<div class="container">
+  <form class="filtros" role="search" aria-label="Filtrar publicações" hidden>
+    <div class="filtros__categorias" role="group" aria-label="Categoria">
+      <button type="button" class="filtro" data-filtro="todas" aria-pressed="true">Todas</button>
+      {% for cat in categorias.conteudos %}
+        <button type="button" class="filtro" data-filtro="{{ cat.id }}" aria-pressed="false">{{ cat.nomeCurto or cat.nome }}</button>
+      {% endfor %}
+    </div>
+    <div class="filtros__busca">
+      <label for="busca">Buscar por palavra-chave</label>
+      <input id="busca" type="search" placeholder="Ex.: Mercosul, logística, China" autocomplete="off">
+    </div>
+    <p class="filtros__resultado" aria-live="polite"></p>
+  </form>
+</div>
+
+{% for cat in categorias.conteudos %}
+  {% set posts = collections.publicacoes | daCategoria(cat.id) %}
+  <section class="secao secao--categoria" id="{{ cat.id }}" data-secao="{{ cat.id }}" aria-labelledby="titulo-{{ cat.id }}">
+    <div class="container">
+      <h2 id="titulo-{{ cat.id }}" class="titulo-secao">{{ cat.nome }}</h2>
+      <p class="introducao">{{ cat.descricao }}</p>
+      {% if posts.length %}
+        <div class="grade-cards">
+          {% for post in posts %}{{ c.cardPost(post, cat.nomeCurto or cat.nome) }}{% endfor %}
+        </div>
+      {% else %}
+        <p class="vazio">Ainda não há publicações nesta categoria.</p>
+      {% endif %}
+    </div>
+  </section>
+{% endfor %}
+
+<script src="/scripts/filtros-busca.js" defer></script>

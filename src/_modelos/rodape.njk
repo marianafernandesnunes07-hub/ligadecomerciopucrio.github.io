@@ -1,0 +1,15 @@
+{# Rodapé de todas as páginas. Os contatos vêm de src/_dados/site.json. #}
+<footer class="rodape">
+  <div class="container rodape__interno">
+    <div class="rodape__marca">
+      <img src="{{ site.logo }}" alt="" width="56" height="56">
+      <p><strong>{{ site.nome }}</strong><br>{{ site.instituicao }}</p>
+    </div>
+    <ul class="rodape__links" aria-label="Canais de contato">
+      <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      <li><a href="{{ site.instagram.url }}" rel="noopener">Instagram</a></li>
+      <li><a href="{{ site.linkedin.url }}" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
+  <p class="container rodape__copy">© {{ "now" | ano }} {{ site.nome }} · PUC-Rio</p>
+</footer>

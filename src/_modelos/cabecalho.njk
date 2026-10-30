@@ -1,0 +1,31 @@
+{# Cabeçalho que aparece em todas as páginas. Para mudar o menu, edite a lista "menu" abaixo. #}
+{% set menu = [
+  { texto: "Início", link: "/" },
+  { texto: "Nossas Áreas", link: "/nossas-areas/" },
+  { texto: "Conteúdos", link: "/conteudos/" },
+  { texto: "Eventos", link: "/eventos/" },
+  { texto: "Contato", link: "/#contato" }
+] %}
+<header class="cabecalho">
+  <div class="cabecalho__interno container">
+    <a class="cabecalho__marca" href="/">
+      <img src="{{ site.logo }}" alt="" width="48" height="48">
+      <span><strong>{{ site.sigla }}</strong> <span class="cabecalho__sub">PUC-Rio</span></span>
+    </a>
+
+    <!-- Botão do menu no celular. O script menu.js abre e fecha a lista. -->
+    <button class="cabecalho__botao-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="icone-menu" aria-hidden="true"></span>
+      <span class="visualmente-oculto">Abrir menu</span>
+    </button>
+
+    <nav class="cabecalho__nav" aria-label="Menu principal">
+      <ul id="menu-principal" class="menu">
+        {% for item in menu %}
+          {% set ativo = (page.url == item.link) or (item.link != "/" and item.link != "/#contato" and page.url.startsWith(item.link)) %}
+          <li><a href="{{ item.link }}" {% if ativo %}aria-current="page"{% endif %}>{{ item.texto }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

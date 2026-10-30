@@ -1,0 +1,17 @@
+{
+  "nome": "Liga de Comércio e Negócios Internacionais",
+  "sigla": "LCNI",
+  "instituicao": "Instituto de Relações Internacionais da PUC-Rio",
+  "descricao": "Iniciativa estudantil do IRI PUC-Rio que aproxima os estudantes do comércio e dos negócios internacionais.",
+  "email": "ligadecomercio.iri@gmail.com",
+  "instagram": {
+    "usuario": "@ligadecomercio.iri",
+    "url": "https://www.instagram.com/ligadecomercio.iri/"
+  },
+  "linkedin": {
+    "nome": "Liga de Comércio",
+    "url": "https://www.linkedin.com/company/ligadecomercio/"
+  },
+  "logo": "/imagens/marca/logo.png",
+  "mostrarPendencias": true
+}

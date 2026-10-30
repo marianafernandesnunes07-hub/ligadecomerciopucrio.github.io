@@ -1,0 +1,33 @@
+---
+layout: base.njk
+titulo: Eventos
+permalink: /eventos/
+---
+{% import "componentes.njk" as c %}
+<header class="cabecalho-pagina">
+  <div class="container">
+    <h1>Eventos</h1>
+    {{ c.pendente("texto de introdução geral sobre o papel dos eventos na atuação da Liga.", site.mostrarPendencias) }}
+    <nav aria-label="Categorias de eventos">
+      <ul class="ancoras">
+        {% for cat in categorias.eventos %}<li><a href="#{{ cat.id }}">{{ cat.nome }}</a></li>{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% for cat in categorias.eventos %}
+  {% set lista = collections.eventos | daCategoria(cat.id) %}
+  <section class="secao secao--categoria" id="{{ cat.id }}" aria-labelledby="titulo-{{ cat.id }}">
+    <div class="container">
+      <h2 id="titulo-{{ cat.id }}" class="titulo-secao">{{ cat.nome }}</h2>
+      {% for paragrafo in cat.descricao.split("\n\n") %}<p class="introducao">{{ paragrafo }}</p>{% endfor %}
+      {% if lista.length %}
+        <div class="grade-cards">
+          {% for evento in lista %}{{ c.cardEvento(evento) }}{% endfor %}
+        </div>
+      {% endif %}
+      {% if cat.pendente %}{{ c.pendente(cat.pendente, site.mostrarPendencias) }}{% endif %}
+    </div>
+  </section>
+{% endfor %}

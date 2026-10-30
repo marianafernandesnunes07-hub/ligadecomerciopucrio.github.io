@@ -1,0 +1,60 @@
+---
+layout: base.njk
+titulo: Nossas Áreas
+permalink: /nossas-areas/
+---
+{% import "componentes.njk" as c %}
+<header class="cabecalho-pagina">
+  <div class="container">
+    <h1>Nossas áreas</h1>
+    <p class="introducao">A LCNI é organizada em três grupos de trabalho (GTs) complementares, que conectam pesquisa, comunicação e experiências práticas. Cada área desenvolve atividades próprias, mas todas contribuem para o propósito de ampliar o conhecimento sobre comércio e negócios internacionais e aproximar os estudantes do mercado.</p>
+    <p class="introducao">Conheça os nossos GTs e as iniciativas desenvolvidas por cada uma.</p>
+  </div>
+</header>
+
+<div class="container areas">
+  <section class="area" aria-labelledby="area-conteudo">
+    <p class="area__numero" aria-hidden="true">01</p>
+    <div>
+      <h2 id="area-conteudo">Conteúdo</h2>
+      <p>A área de Conteúdo é responsável pela produção intelectual da LCNI. Por meio de pesquisas, análises e textos, buscamos aprofundar a compreensão sobre acontecimentos e tendências que influenciam o comércio e os negócios internacionais.</p>
+      <h3>Nossas atividades</h3>
+      <ul class="lista">
+        <li><strong>Análise de Conjuntura Semanal:</strong> acompanhamento e análise de acontecimentos relevantes do cenário internacional.</li>
+        <li><strong>Artigo Mensal:</strong> produção coletiva de artigos que aprofundam temas relacionados ao comércio e aos negócios internacionais.</li>
+      </ul>
+      <a class="botao" href="/conteudos/">Explorar conteúdos</a>
+    </div>
+  </section>
+
+  <section class="area" aria-labelledby="area-marketing">
+    <p class="area__numero" aria-hidden="true">02</p>
+    <div>
+      <h2 id="area-marketing">Marketing</h2>
+      <p>A área de Marketing é responsável por construir e fortalecer a identidade visual da LCNI e desenvolver conteúdos que comuniquem projetos e temas de interesse. Seu trabalho combina consistência visual, criatividade e comunicação estratégica para ampliar a presença da Liga e aproximar seus conteúdos do público.</p>
+      <h3>Nossas atividades</h3>
+      <ul class="lista">
+        <li><strong>Identidade Visual</strong></li>
+        <li><strong>Business Case</strong></li>
+        <li><strong>Em Alta</strong></li>
+      </ul>
+      {{ c.pendente("descrição curta de cada atividade (Identidade Visual, Business Case e Em Alta).", site.mostrarPendencias) }}
+      <a class="botao" href="/conteudos/#business-case">Explorar conteúdos</a>
+    </div>
+  </section>
+
+  <section class="area" aria-labelledby="area-extensao">
+    <p class="area__numero" aria-hidden="true">03</p>
+    <div>
+      <h2 id="area-extensao">Extensão</h2>
+      <p>O GT de Extensão estabelece parcerias com outras instituições, ligas, empresas e especialistas do setor. Além disso, é responsável por elaborar nossas visitas guiadas e organizar os eventos da LCNI, prospectando profissionais para ministrar aulas, palestras e rodas de conversa sobre carreira com os membros.</p>
+      <h3>Nossas atividades</h3>
+      <ul class="lista">
+        <li><strong>Visitas Guiadas:</strong> experiências em empresas e instituições para conhecer operações, estratégias e ambientes de trabalho.</li>
+        <li><strong>Palestras:</strong> encontros com profissionais e especialistas para discutir temas relevantes e compartilhar experiências.</li>
+        <li><strong>Semana de Comércio e Negócios Internacionais:</strong> atividades temáticas de aprofundamento, troca de conhecimentos e desenvolvimento dos membros.</li>
+      </ul>
+      <a class="botao" href="/eventos/">Conhecer nossos eventos</a>
+    </div>
+  </section>
+</div>
