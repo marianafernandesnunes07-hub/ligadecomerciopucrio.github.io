@@ -113,10 +113,18 @@
 .contato__canais a { font-size: var(--t-medio); }
 
 /* ---------- Cabeçalho das páginas internas ---------- */
-.cabecalho-pagina { padding-block: var(--e-5) var(--e-3); border-bottom: 1px solid var(--linha); }
-.cabecalho-pagina h1 { font-size: var(--t-enorme); }
+/* Título das páginas internas: faixa vinho, como as seções vinho da página inicial. */
+.cabecalho-pagina { padding-block: var(--e-5) var(--e-4); background: var(--vinho); color: #fff; }
+.cabecalho-pagina h1 { font-size: var(--t-enorme); color: #fff; }
+.cabecalho-pagina .introducao { color: #f6e9e6; }
+.cabecalho-pagina .introducao:last-child { margin-bottom: 0; }
 .ancoras { list-style: none; padding: 0; margin: var(--e-3) 0 0; display: flex; flex-wrap: wrap; gap: var(--e-1) var(--e-3); }
-.ancoras a { font-weight: 600; }
+.ancoras a { font-weight: 600; color: #fff; }
+.ancoras a:hover { color: var(--amarelo); text-decoration-color: var(--amarelo); }
+
+/* Fundo off-white no resto da página (Conteúdos e Eventos). */
+.fundo-claro { background: var(--papel-2); }
+.fundo-claro .secao--categoria + .secao--categoria { border-top-color: var(--linha); }
 
 /* ---------- Nossas Áreas ---------- */
 .areas { padding-block: var(--e-4) var(--e-5); }

@@ -100,6 +100,7 @@ Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: fals
 - **Diretoria**: fotos quadradas (cantos levemente arredondados) e mais espaço entre elas.
 - **Eventos**: Visitas Guiadas e Semana com foto à esquerda e texto à direita (no celular, foto em cima). Palestras viraram carrossel com setas, da mais recente para a mais antiga; as setas só aparecem quando há mais palestras do que cabem na tela. Script em `src/scripts/carrossel.js`.
 - Novas pendências: fotos dos depoimentos e foto da Semana.
+- **Cabeçalho das páginas internas** (Conteúdos, Eventos e Nossas Áreas): faixa vinho com título branco (`.cabecalho-pagina`). Em Conteúdos e Eventos, o resto da página fica no off-white de Nosso Propósito (`fundo: claro` no topo do arquivo da página).
 
 ## Como retomar numa conversa nova
 Pedir para o Claude ler este PROCESSO.md (no Projeto "Site Liga de Comércio PUC-Rio" ou no repositório) e conectar o repositório `marianafernandesnunes07-hub/ligadecomerciopucrio.github.io`.

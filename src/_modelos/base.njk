@@ -27,7 +27,7 @@
 
   {% include "cabecalho.njk" %}
 
-  <main id="conteudo" tabindex="-1">
+  <main id="conteudo" tabindex="-1"{% if fundo %} class="fundo-{{ fundo }}"{% endif %}>
     {{ content | safe }}
   </main>
 
