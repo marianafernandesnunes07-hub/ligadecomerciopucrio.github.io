@@ -102,6 +102,7 @@ Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: fals
 - Novas pendências: fotos dos depoimentos e foto da Semana.
 - **Cabeçalho das páginas internas** (Conteúdos, Eventos e Nossas Áreas): faixa vinho com título branco (`.cabecalho-pagina`). Em Conteúdos e Eventos, o resto da página fica no off-white de Nosso Propósito (`fundo: claro` no topo do arquivo da página).
 - **Nossas Áreas**: cada área virou um bloco com fundo off-white, sobre fundo branco. Botão da abertura passou a dizer "Leia nossas publicações".
+- **Atividades em slides (Nossas Áreas)**: em cada área, as atividades viraram slides com foto à esquerda e texto à direita. Clicar na foto ou na seta passa para a próxima (a última volta para a primeira); há bolinhas para pular direto e, no celular, dá para arrastar. Dados em `src/_dados/atividades.json` (painel: Institucional → Atividades das áreas), fotos em `src/imagens/atividades/`, script em `src/scripts/atividades.js`. O documento de instruções só pedia "se possível, um elemento visual próprio" por bloco; o formato em slides foi pedido pela Mari. Pendentes: fotos de todas as atividades e descrições de Identidade Visual, Business Case e Em Alta.
 
 ## Como retomar numa conversa nova
 Pedir para o Claude ler este PROCESSO.md (no Projeto "Site Liga de Comércio PUC-Rio" ou no repositório) e conectar o repositório `marianafernandesnunes07-hub/ligadecomerciopucrio.github.io`.

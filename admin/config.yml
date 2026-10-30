@@ -146,6 +146,37 @@ collections:
               - { label: "Identificação", name: identificacao, widget: string }
               - { label: "Texto", name: texto, widget: text }
               - { label: "Foto (opcional; sem foto aparecem as iniciais)", name: foto, widget: image, required: false, media_folder: /src/imagens/depoimentos, public_folder: /imagens/depoimentos }
+      - name: atividades
+        label: "Atividades das áreas (Nossas Áreas)"
+        file: src/_dados/atividades.json
+        fields:
+          - label: "Conteúdo"
+            name: conteudo
+            widget: list
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Descrição", name: descricao, widget: text, required: false }
+              - { label: "Foto", name: foto, widget: image, required: false, media_folder: /src/imagens/atividades, public_folder: /imagens/atividades }
+              - { label: "Descrição da foto (acessibilidade)", name: descricaoFoto, widget: string, required: false }
+              - { label: "Link (opcional, ex.: /conteudos/#em-alta)", name: link, widget: string, required: false }
+          - label: "Marketing"
+            name: marketing
+            widget: list
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Descrição", name: descricao, widget: text, required: false }
+              - { label: "Foto", name: foto, widget: image, required: false, media_folder: /src/imagens/atividades, public_folder: /imagens/atividades }
+              - { label: "Descrição da foto (acessibilidade)", name: descricaoFoto, widget: string, required: false }
+              - { label: "Link (opcional, ex.: /conteudos/#em-alta)", name: link, widget: string, required: false }
+          - label: "Extensão"
+            name: extensao
+            widget: list
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Descrição", name: descricao, widget: text, required: false }
+              - { label: "Foto", name: foto, widget: image, required: false, media_folder: /src/imagens/atividades, public_folder: /imagens/atividades }
+              - { label: "Descrição da foto (acessibilidade)", name: descricaoFoto, widget: string, required: false }
+              - { label: "Link (opcional, ex.: /conteudos/#em-alta)", name: link, widget: string, required: false }
       - name: semana
         label: "Foto da Semana de Comércio e Negócios Internacionais"
         file: src/_dados/semana.json

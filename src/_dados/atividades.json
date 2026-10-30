@@ -1,0 +1,64 @@
+{
+  "conteudo": [
+    {
+      "nome": "Análise de Conjuntura Semanal",
+      "descricao": "Acompanhamento e análise de acontecimentos relevantes do cenário internacional.",
+      "link": "/conteudos/#analise-de-conjuntura",
+      "foto": "",
+      "descricaoFoto": ""
+    },
+    {
+      "nome": "Artigo Mensal",
+      "descricao": "Produção coletiva de artigos que aprofundam temas relacionados ao comércio e aos negócios internacionais.",
+      "link": "/conteudos/#artigos",
+      "foto": "",
+      "descricaoFoto": ""
+    }
+  ],
+  "marketing": [
+    {
+      "nome": "Identidade Visual",
+      "descricao": "",
+      "link": "",
+      "foto": "",
+      "descricaoFoto": ""
+    },
+    {
+      "nome": "Business Case",
+      "descricao": "",
+      "link": "/conteudos/#business-case",
+      "foto": "",
+      "descricaoFoto": ""
+    },
+    {
+      "nome": "Em Alta",
+      "descricao": "",
+      "link": "/conteudos/#em-alta",
+      "foto": "",
+      "descricaoFoto": ""
+    }
+  ],
+  "extensao": [
+    {
+      "nome": "Visitas Guiadas",
+      "descricao": "Experiências em empresas e instituições para conhecer operações, estratégias e ambientes de trabalho.",
+      "link": "/eventos/#visitas-guiadas",
+      "foto": "",
+      "descricaoFoto": ""
+    },
+    {
+      "nome": "Palestras",
+      "descricao": "Encontros com profissionais e especialistas para discutir temas relevantes e compartilhar experiências.",
+      "link": "/eventos/#palestras",
+      "foto": "",
+      "descricaoFoto": ""
+    },
+    {
+      "nome": "Semana de Comércio e Negócios Internacionais",
+      "descricao": "Atividades temáticas de aprofundamento, troca de conhecimentos e desenvolvimento dos membros.",
+      "link": "/eventos/#semana",
+      "foto": "",
+      "descricaoFoto": ""
+    }
+  ]
+}

@@ -39,6 +39,7 @@ No painel, em **Institucional**:
 
 - **Diretoria**: troque a gestão (ex.: 2027.1), os nomes, cargos e fotos. Use fotos quadradas, se possível.
 - **Depoimentos**: nome, identificação, texto e foto (opcional). Sem foto, aparecem as iniciais da pessoa num círculo.
+- **Atividades das áreas**: nome, descrição, foto e link de cada atividade que aparece nos slides de Nossas Áreas.
 - **Foto da Semana de Comércio e Negócios Internacionais**: a foto que aparece nos Destaques e na página Eventos.
 - **Contatos e configurações**: e-mail, Instagram, LinkedIn e logo.
 

@@ -244,3 +244,49 @@
 }
 .carrossel__botao:hover:not(:disabled) { background: var(--vinho); color: var(--papel); }
 .carrossel__botao:disabled { opacity: 0.35; cursor: default; }
+
+/* ---------- Atividades de cada área (Nossas Áreas) ---------- */
+.area > div { min-width: 0; } /* deixa o trilho de slides caber na largura da área */
+.atividades { margin-block: var(--e-2) var(--e-3); }
+.atividades__trilho {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+}
+.atividades__trilho::-webkit-scrollbar { display: none; }
+.atividade {
+  scroll-snap-align: start;
+  display: grid;
+  gap: var(--e-3);
+  padding: var(--e-3);
+}
+@media (min-width: 40rem) {
+  .atividade { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; }
+}
+.atividade__foto-area { margin: 0; }
+.atividade__foto-area--clicavel { cursor: pointer; }
+.atividade__foto { display: grid; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--raio); background: var(--papel-2); }
+.atividade__foto-area--clicavel:hover .atividade__foto { filter: brightness(0.92); }
+.atividade__contador { font-size: var(--t-pequeno); color: var(--laranja-texto); font-weight: 700; letter-spacing: 0.08em; margin-bottom: var(--e-1); }
+.atividade__nome { font-family: var(--fonte-titulo); color: var(--vinho); font-size: var(--t-medio); margin-bottom: var(--e-1); }
+.atividade__texto > :last-child { margin-bottom: 0; }
+.atividade__link { font-weight: 600; }
+.atividades__controles { display: flex; align-items: center; justify-content: flex-end; gap: var(--e-2); margin-top: var(--e-2); }
+.atividades__controles[hidden] { display: none; }
+.atividades__pontos { display: flex; gap: 0.4rem; }
+.atividades__ponto {
+  width: 0.7rem; height: 0.7rem; padding: 0;
+  border: 1px solid var(--vinho); border-radius: 50%;
+  background: transparent; cursor: pointer;
+}
+.atividades__ponto[aria-current="true"] { background: var(--vinho); }

@@ -66,6 +66,46 @@
 </article>
 {% endmacro %}
 
+{# Atividades de uma área (Nossas Áreas): um slide por atividade, com foto à
+   esquerda e texto à direita. Clicar na foto ou nas setas passa para a próxima.
+   Sem JavaScript, os slides continuam passando com o dedo ou o trackpad. #}
+{% macro atividades(lista, id, mostrar) %}
+<div class="atividades" data-atividades>
+  <ul class="atividades__trilho" id="atividades-{{ id }}" tabindex="0" aria-label="Atividades: role para o lado para ver as próximas">
+    {% for a in lista %}
+    <li class="atividade" id="atividade-{{ id }}-{{ loop.index }}" aria-label="{{ loop.index }} de {{ lista.length }}: {{ a.nome }}">
+      <div class="atividade__foto-area">
+        {% if a.foto %}
+          <img class="atividade__foto" src="{{ a.foto }}" alt="{{ a.descricaoFoto or '' }}" loading="lazy" width="600" height="400">
+        {% elif mostrar %}
+          <div class="atividade__foto foto-pendente" aria-hidden="true">Foto a completar</div>
+        {% endif %}
+      </div>
+      <div class="atividade__texto">
+        <p class="atividade__contador" aria-hidden="true">{{ loop.index }} / {{ lista.length }}</p>
+        <h4 class="atividade__nome">{{ a.nome }}</h4>
+        {% if a.descricao %}<p>{{ a.descricao }}</p>{% else %}{{ pendente("descrição curta desta atividade.", mostrar) }}{% endif %}
+        {% if a.link %}<a class="atividade__link" href="{{ a.link }}">Ver {{ a.nome }}</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if lista.length > 1 %}
+  <div class="atividades__controles" hidden>
+    <button type="button" class="carrossel__botao" data-direcao="-1" aria-controls="atividades-{{ id }}">
+      <span aria-hidden="true">←</span><span class="visualmente-oculto">Atividade anterior</span>
+    </button>
+    <div class="atividades__pontos">
+      {% for a in lista %}<button type="button" class="atividades__ponto" data-indice="{{ loop.index0 }}" aria-controls="atividades-{{ id }}"><span class="visualmente-oculto">{{ a.nome }}</span></button>{% endfor %}
+    </div>
+    <button type="button" class="carrossel__botao" data-direcao="1" aria-controls="atividades-{{ id }}">
+      <span aria-hidden="true">→</span><span class="visualmente-oculto">Próxima atividade</span>
+    </button>
+  </div>
+  {% endif %}
+</div>
+{% endmacro %}
+
 {# Aviso de informação que ainda falta. Some do site quando
    "mostrarPendencias" for false em src/_dados/site.json. #}
 {% macro pendente(texto, mostrar) %}
