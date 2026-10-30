@@ -18,7 +18,7 @@ O site é **estático**: não tem servidor nem banco de dados, por isso a hosped
 ## Estrutura de pastas
 
 ```
-├── admin/                    painel de publicação (Sveltia CMS)
+├── admin/                    painel de publicação (Sveltia CMS), publicado no endereço secreto
 │   ├── index.html
 │   └── config.yml            campos dos formulários do painel
 ├── src/
@@ -67,7 +67,7 @@ npm run build    # gera o site pronto na pasta _site/
 
 Resumo (o passo a passo completo está no [COMO-PUBLICAR.md](COMO-PUBLICAR.md)):
 
-- **Pelo painel:** abra `<endereço do site>/admin/`, entre com o GitHub, escolha a categoria e clique em "Novo".
+- **Pelo painel:** abra `<endereço do site>/painel-xvt6abgsya/` (endereço secreto, sem link no site; definido em `ENDERECO_PAINEL` no `eleventy.config.js`), entre com o GitHub, escolha a categoria e clique em "Novo".
 - **À mão:** copie `src/conteudos/_modelo-post.md` para a pasta da categoria, renomeie e preencha.
 
 ## Mudar cores, fontes e textos

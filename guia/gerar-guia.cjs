@@ -9,7 +9,7 @@ const VINHO = "690C0B", VINHO2 = "7C0023", LARANJA = "F48337", AMARELO = "EEAD15
 const TINTA = "1F1A1A", SUAVE = "5B5050", CLARO = "FAF6F1", LARANJA_CLARO = "FFF4EA";
 const TIT = "Georgia", TXT = "Calibri";
 const SITE = "https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/";
-const ADMIN = SITE + "admin/";
+const ADMIN = SITE + "painel-xvt6abgsya/"; // endereço secreto do painel (ver eleventy.config.js)
 const REPO = "https://github.com/marianafernandesnunes07-hub/ligadecomerciopucrio.github.io";
 const logo = fs.readFileSync(__dirname + "/../src/imagens/marca/logo.png");
 const W = 9638; // largura útil A4 com margens de 2 cm (DXA)

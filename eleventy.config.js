@@ -14,7 +14,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/imagens");
   eleventyConfig.addPassthroughCopy("src/estilos");
   eleventyConfig.addPassthroughCopy("src/scripts");
-  eleventyConfig.addPassthroughCopy({ "admin": "admin" });
+  // O painel de publicação fica num endereço secreto, sem link em nenhuma página.
+  // Quem visita o site não vê nenhum botão de login. /admin/ não existe mais.
+  // Para trocar o endereço (ex.: na passagem de gestão), mude só este nome.
+  const ENDERECO_PAINEL = "painel-xvt6abgsya";
+  eleventyConfig.addPassthroughCopy({ "admin": ENDERECO_PAINEL });
 
   // Ordena do mais recente para o mais antigo usando o campo "data" do post.
   const porDataDesc = (a, b) => new Date(b.data.data) - new Date(a.data.data);

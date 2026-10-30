@@ -12,7 +12,7 @@ Guia para quem é do Marketing (ou de qualquer GT) e precisa publicar um post ou
 
 ## Publicar um post
 
-1. Abra o painel: **`<endereço do site>/admin/`**
+1. Abra o painel: **`<endereço do site>/painel-xvt6abgsya/`**. Esse endereço não aparece em nenhuma página do site: salve nos favoritos e não divulgue fora da Liga.
 2. Clique em **Sign In with Token** e cole o seu token.
 3. No menu da esquerda, escolha a categoria: **Artigos**, **Análise de Conjuntura**, **Business Case** ou **Em Alta**.
 4. Clique em **Novo** e preencha:

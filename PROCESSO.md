@@ -63,7 +63,7 @@ Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: fals
 
 ### Endereços
 - Site: https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/
-- Painel de publicação: https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/admin/
+- Painel de publicação (endereço secreto, ver Etapa 4): https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/painel-xvt6abgsya/
 - Repositório: https://github.com/marianafernandesnunes07-hub/ligadecomerciopucrio.github.io
 
 ### O que aconteceu
@@ -79,7 +79,7 @@ Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: fals
 
 ### Guia em Word
 - `guia/Guia do site da LCNI.docx`: guia de cuidados e de como adicionar, editar e remover informações, na identidade da Liga (logo, vinho, laranja, amarelo; fontes Georgia e Calibri). 6 páginas: como o site funciona, acessos e segurança, posts, eventos, diretoria/depoimentos/contatos, boas práticas, problemas comuns e checklist de passagem de gestão.
-- Para gerar de novo depois de editar o texto: `node guia/gerar-guia.js` (precisa do pacote `docx`: `npm install docx`).
+- Para gerar de novo depois de editar o texto: `node guia/gerar-guia.cjs` (precisa do pacote `docx`: `npm install docx`).
 
 ### Arquivos temporários no Mac da Mari (podem ser apagados)
 - Em Downloads: `wixposts.json`, `wiximgs1.json`, `wiximgs2.json`, `lcni.json` e dois arquivos ocultos que começam com `.Q6L2SF6YDW`.
@@ -107,6 +107,15 @@ Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: fals
 - **Depoimentos em carrossel**: dois por vez no computador e um no celular, com setas para os próximos (mesmo `carrossel.js` das palestras). Cada card tem espaço para a foto da pessoa (vertical, 4:5) ao lado do texto e o link do LinkedIn no lugar das iniciais; o link só aparece quando o campo `linkedin` for preenchido. Cada card tem altura própria, então abrir um texto não estica os vizinhos. Pendentes: fotos, LinkedIn e os novos depoimentos que a Liga está pedindo.
 - **Página Membros** (`/membros/`): botão "Conheça todos os membros" embaixo da Diretoria. A página lista os membros por GT (Conteúdo, Marketing e Extensão) com foto quadrada, nome e curso opcional. Dados em `src/_dados/membros.json` (painel: Institucional → Membros), fotos em `src/imagens/membros/`. Começa vazia, com caixas "A completar", porque os membros e as fotos do Wix estão desatualizados. Não foi incluída no menu do topo.
 - **Próximo**: trocar os números 01, 02, 03 de Nossas Áreas por elementos visuais do Canva que a Mari vai mandar.
+
+## Etapa 4. Painel em endereço secreto (30/10/2026)
+
+- A pedido da Mari, o painel de publicação saiu de `/admin/` (que agora dá 404) e foi para um endereço que não aparece em nenhuma página do site: `/painel-xvt6abgsya/`. Nenhum botão ou link de login aparece para quem visita o site.
+- O nome fica num lugar só: `ENDERECO_PAINEL` em `eleventy.config.js`. Os arquivos do painel continuam na pasta `admin/` do repositório.
+- A página do painel tem `noindex, nofollow` (buscadores não listam) e `no-referrer` (o endereço não vaza para outros sites ao carregar o painel).
+- Limite: o repositório é público, então quem abrir o código consegue achar o endereço. Ele esconde, não protege. A proteção de verdade continua sendo o login do GitHub: só colaboradores do repositório conseguem salvar.
+- Na passagem de gestão, dá para trocar o endereço mudando `ENDERECO_PAINEL`, `ADMIN` em `guia/gerar-guia.cjs` e as menções em README.md e COMO-PUBLICAR.md.
+- `guia/gerar-guia.js` foi renomeado para `guia/gerar-guia.cjs` (não rodava porque o projeto usa módulos ES). O guia em Word foi gerado de novo com o endereço novo.
 
 ## Como retomar numa conversa nova
 Pedir para o Claude ler este PROCESSO.md (no Projeto "Site Liga de Comércio PUC-Rio" ou no repositório) e conectar o repositório `marianafernandesnunes07-hub/ligadecomerciopucrio.github.io`.
