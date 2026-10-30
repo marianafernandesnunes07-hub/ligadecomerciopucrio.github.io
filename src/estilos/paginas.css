@@ -127,14 +127,17 @@
 .fundo-claro .secao--categoria + .secao--categoria { border-top-color: var(--linha); }
 
 /* ---------- Nossas Áreas ---------- */
-.areas { padding-block: var(--e-4) var(--e-5); }
+.areas { padding-block: var(--e-4) var(--e-5); display: grid; gap: var(--e-4); }
+/* Cada área é um bloco com o fundo off-white de Nosso Propósito. */
 .area {
   display: grid;
   gap: var(--e-2);
-  padding-block: var(--e-4);
-  border-bottom: 1px solid var(--linha);
+  padding: var(--e-4) var(--e-3);
+  background: var(--papel-2);
+  border-radius: var(--raio);
 }
-.area:last-child { border-bottom: 0; }
+@media (min-width: 40rem) { .area { padding: var(--e-4); } }
+.area > div > :last-child { margin-bottom: 0; }
 .area h2 { font-size: var(--t-grande); }
 .area__numero { font-family: var(--fonte-titulo); font-size: var(--t-enorme); color: var(--laranja); line-height: 1; margin: 0; }
 @media (min-width: 56rem) { .area { grid-template-columns: 10rem 1fr; } .area > div { max-width: var(--largura-texto); } }
