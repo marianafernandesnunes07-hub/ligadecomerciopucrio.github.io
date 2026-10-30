@@ -53,6 +53,16 @@ export default function (eleventyConfig) {
     return d.toLocaleDateString("pt-BR", opcoes);
   });
 
+  // Iniciais do nome (aparecem no lugar da foto de um depoimento sem foto).
+  // Ex.: "Giovanna Ghetti" vira "GG".
+  eleventyConfig.addFilter("iniciais", (nome) => {
+    const partes = String(nome || "").trim().split(/\s+/).filter(Boolean);
+    if (!partes.length) return "";
+    const primeira = partes[0][0];
+    const ultima = partes.length > 1 ? partes[partes.length - 1][0] : "";
+    return (primeira + ultima).toUpperCase();
+  });
+
   // Ano atual (usado no rodapé).
   eleventyConfig.addFilter("ano", () => new Date().getFullYear());
 

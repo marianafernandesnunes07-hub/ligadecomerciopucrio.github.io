@@ -16,18 +16,54 @@ permalink: /eventos/
   </div>
 </header>
 
+{# Cada categoria tem um formato:
+   - Visitas Guiadas: um evento por linha, foto à esquerda e texto à direita.
+   - Semana: foto (src/_dados/semana.json) à esquerda e a apresentação à direita.
+   - Palestras: carrossel que passa para o lado, da mais recente para a mais antiga. #}
 {% for cat in categorias.eventos %}
   {% set lista = collections.eventos | daCategoria(cat.id) %}
   <section class="secao secao--categoria" id="{{ cat.id }}" aria-labelledby="titulo-{{ cat.id }}">
     <div class="container">
       <h2 id="titulo-{{ cat.id }}" class="titulo-secao">{{ cat.nome }}</h2>
-      {% for paragrafo in cat.descricao.split("\n\n") %}<p class="introducao">{{ paragrafo }}</p>{% endfor %}
-      {% if lista.length %}
-        <div class="grade-cards">
-          {% for evento in lista %}{{ c.cardEvento(evento) }}{% endfor %}
+
+      {% if cat.id == "semana" %}
+        <div class="evento-linha evento-linha--apresentacao">
+          {% if semana.foto %}
+            <img class="evento-linha__foto" src="{{ semana.foto }}" alt="{{ semana.descricaoFoto or '' }}" loading="lazy" width="600" height="400">
+          {% elif site.mostrarPendencias %}
+            <div class="evento-linha__foto foto-pendente" aria-hidden="true">Foto a completar</div>
+          {% endif %}
+          <div class="evento-linha__texto">
+            {% for paragrafo in cat.descricao.split("\n\n") %}<p>{{ paragrafo }}</p>{% endfor %}
+          </div>
         </div>
+        {% for evento in lista %}{{ c.eventoEmLinha(evento, site.mostrarPendencias) }}{% endfor %}
+
+      {% elif cat.id == "palestras" %}
+        {% for paragrafo in cat.descricao.split("\n\n") %}<p class="introducao">{{ paragrafo }}</p>{% endfor %}
+        {% if lista.length %}
+          <div class="carrossel" data-carrossel>
+            <ul class="carrossel__trilho" id="trilho-{{ cat.id }}" tabindex="0" aria-label="{{ cat.nome }}: role para o lado para ver mais">
+              {% for evento in lista %}<li class="carrossel__item">{{ c.cardEvento(evento) }}</li>{% endfor %}
+            </ul>
+            <div class="carrossel__controles" hidden>
+              <button type="button" class="carrossel__botao" data-direcao="-1" aria-controls="trilho-{{ cat.id }}">
+                <span aria-hidden="true">←</span><span class="visualmente-oculto">Palestras anteriores</span>
+              </button>
+              <button type="button" class="carrossel__botao" data-direcao="1" aria-controls="trilho-{{ cat.id }}">
+                <span aria-hidden="true">→</span><span class="visualmente-oculto">Próximas palestras</span>
+              </button>
+            </div>
+          </div>
+        {% endif %}
+
+      {% else %}
+        {% for paragrafo in cat.descricao.split("\n\n") %}<p class="introducao">{{ paragrafo }}</p>{% endfor %}
+        {% for evento in lista %}{{ c.eventoEmLinha(evento, site.mostrarPendencias) }}{% endfor %}
       {% endif %}
+
       {% if cat.pendente %}{{ c.pendente(cat.pendente, site.mostrarPendencias) }}{% endif %}
     </div>
   </section>
 {% endfor %}
+<script src="/scripts/carrossel.js" defer></script>

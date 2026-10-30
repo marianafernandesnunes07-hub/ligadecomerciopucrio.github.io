@@ -20,7 +20,7 @@ layout: base.njk
 <section class="secao" aria-labelledby="quem-somos">
   <div class="container grade-2">
     <div>
-      <h2 id="quem-somos" class="titulo-secao">Quem somos</h2>
+      <h2 id="quem-somos" class="titulo-secao titulo-secao--centro">Quem somos</h2>
     </div>
     <div class="texto-longo">
       <p>A Liga de Comércio e Negócios Internacionais é uma iniciativa estudantil vinculada ao Instituto de Relações Internacionais da PUC-Rio, criada em 2019 com o propósito de aproximar os estudantes do universo do comércio internacional.</p>
@@ -33,7 +33,7 @@ layout: base.njk
 <section class="secao secao--clara" aria-labelledby="proposito">
   <div class="container grade-2">
     <div>
-      <h2 id="proposito" class="titulo-secao">Nosso Propósito</h2>
+      <h2 id="proposito" class="titulo-secao titulo-secao--centro">Nosso Propósito</h2>
     </div>
     <div class="texto-longo">
       <p>No formato de projeto realizado de alunos para alunos, o propósito da Liga de Comércio e Negócios Internacionais do IRI PUC-Rio consiste em ampliar a experiência dos membros nos setores comercial e empresarial da indústria. Assim, fortalecendo competências necessárias para a atuação na área do comércio internacional e fomentando a discussão de eventuais problematizações, inovações e outros assuntos relacionados à gestão de negócios.</p>
@@ -45,7 +45,7 @@ layout: base.njk
   <div class="container">
     <h2 id="valores" class="titulo-secao">Nossos Valores</h2>
     <p class="introducao">A LCNI é orientada por três valores que norteiam nossas atividades, nossas relações e nossas decisões: Comunidade, Visão de Futuro e Determinação.</p>
-    <ol class="valores">
+    <ul class="valores">
       <li class="valor">
         <h3>Comunidade</h3>
         <p>Acreditamos que o aprendizado se fortalece por meio da troca. Valorizamos a cooperação, a construção de relações, o trabalho em equipe e um ambiente no qual os membros possam compartilhar conhecimentos, desenvolver competências e ampliar sua rede de contatos.</p>
@@ -58,7 +58,7 @@ layout: base.njk
         <h3>Determinação</h3>
         <p>Valorizamos a iniciativa, a responsabilidade e o comprometimento com aquilo que nos propomos a realizar. Incentivamos os membros a transformar ideias em projetos, assumir desafios e contribuir ativamente para o desenvolvimento da Liga.</p>
       </li>
-    </ol>
+    </ul>
   </div>
 </section>
 
@@ -71,7 +71,7 @@ layout: base.njk
       {% for evento in collections.eventos | daCategoria("visitas-guiadas") %}
         {% if evento.data.destaque %}
         <article class="destaque">
-          {% if evento.data.foto %}<img src="{{ evento.data.foto }}" alt="{{ evento.data.descricaoFoto or '' }}" loading="lazy">{% endif %}
+          {{ c.fotoDestaque(evento.data.foto, evento.data.descricaoFoto, site.mostrarPendencias) }}
           <p class="destaque__tipo">Visita guiada · <time datetime="{{ evento.data.data | dataISO }}">{{ evento.data.data | dataBR("mes") }}</time></p>
           <h3>{{ evento.data.titulo }}</h3>
           <div>{{ evento.content | safe }}</div>
@@ -79,6 +79,7 @@ layout: base.njk
         {% endif %}
       {% endfor %}
       <article class="destaque">
+        {{ c.fotoDestaque(semana.foto, semana.descricaoFoto, site.mostrarPendencias) }}
         <p class="destaque__tipo">Evento</p>
         <h3>Semana de Workshops</h3>
         <p>A Semana de Workshops reúne atividades temáticas voltadas ao aprofundamento de conhecimentos e ao desenvolvimento dos membros da LCNI. Por meio de encontros e atividades práticas, a iniciativa promove a troca de experiências e aproxima os estudantes de temas relevantes para o comércio e os negócios internacionais.</p>
@@ -116,9 +117,17 @@ layout: base.njk
           <blockquote class="depoimento__texto" id="depoimento-{{ loop.index }}">
             <p>“{{ d.texto }}”</p>
           </blockquote>
-          <figcaption>
-            <span class="depoimento__nome">{{ d.nome }}</span>
-            <span class="depoimento__id">{{ d.identificacao }}</span>
+          <figcaption class="depoimento__autor">
+            {% if d.foto %}
+              <img class="depoimento__foto" src="{{ d.foto }}" alt="" loading="lazy" width="120" height="120">
+            {% else %}
+              {# Sem foto: mostra as iniciais no lugar. #}
+              <span class="depoimento__foto depoimento__foto--iniciais" aria-hidden="true">{{ d.nome | iniciais }}</span>
+            {% endif %}
+            <span>
+              <span class="depoimento__nome">{{ d.nome }}</span>
+              <span class="depoimento__id">{{ d.identificacao }}</span>
+            </span>
           </figcaption>
         </figure>
       {% endfor %}

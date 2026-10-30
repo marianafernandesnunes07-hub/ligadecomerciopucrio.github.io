@@ -32,18 +32,9 @@
   margin: var(--e-4) 0 0;
   display: grid;
   gap: var(--e-3);
-  counter-reset: valor;
 }
 @media (min-width: 56rem) { .valores { grid-template-columns: repeat(3, 1fr); } }
-.valor { border-top: 3px solid var(--vinho); padding-top: var(--e-3); counter-increment: valor; }
-.valor::before {
-  content: "0" counter(valor);
-  font-family: var(--fonte-titulo);
-  color: var(--laranja-texto);
-  font-weight: 600;
-  display: block;
-  margin-bottom: var(--e-1);
-}
+.valor { border-top: 3px solid var(--vinho); padding-top: var(--e-3); }
 
 .grade-cards--3 { margin-top: var(--e-3); }
 .destaque {
@@ -52,7 +43,10 @@
   border-radius: var(--raio);
   padding: var(--e-3);
 }
-.destaque img { margin: calc(var(--e-3) * -1) calc(var(--e-3) * -1) var(--e-3); width: calc(100% + var(--e-3) * 2); max-width: none; aspect-ratio: 16/9; object-fit: cover; }
+.destaque { display: flex; flex-direction: column; }
+/* A foto ocupa o topo do card, de borda a borda. */
+.destaque__foto { margin: calc(var(--e-3) * -1) calc(var(--e-3) * -1) var(--e-3); width: calc(100% + var(--e-3) * 2); max-width: none; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--raio) var(--raio) 0 0; }
+.destaque .foto-pendente { background: rgb(255 255 255 / 0.08); border-color: rgb(255 255 255 / 0.35); color: #f6e9e6; }
 .destaque__tipo { font-size: var(--t-pequeno); text-transform: uppercase; letter-spacing: 0.08em; color: var(--amarelo); font-weight: 600; }
 .destaque .pendente { color: var(--tinta); }
 .destaques__mais { margin-top: var(--e-4); margin-bottom: 0; }
@@ -65,9 +59,10 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--e-4) var(--e-3);
 }
-@media (min-width: 40rem) { .diretoria { grid-template-columns: repeat(3, 1fr); } }
+/* Fotos quadradas com mais respiro entre elas. */
+@media (min-width: 40rem) { .diretoria { grid-template-columns: repeat(3, 1fr); gap: 3rem var(--e-4); } }
 @media (min-width: 64rem) { .diretoria { grid-template-columns: repeat(5, 1fr); } }
-.pessoa img { aspect-ratio: 1; object-fit: cover; width: 100%; border-radius: 50%; margin-bottom: var(--e-2); background: var(--papel-2); }
+.pessoa img { aspect-ratio: 1; object-fit: cover; width: 100%; border-radius: var(--raio); margin-bottom: var(--e-2); background: var(--papel-2); }
 .pessoa__nome { font-weight: 700; margin-bottom: 0; line-height: 1.3; }
 .pessoa__cargo { color: var(--tinta-suave); font-size: var(--t-pequeno); }
 
@@ -101,7 +96,13 @@
   text-underline-offset: 0.2em;
   cursor: pointer;
 }
-.depoimento figcaption { margin-top: auto; }
+.depoimento__autor { margin-top: auto; display: flex; align-items: center; gap: var(--e-2); }
+.depoimento__foto { flex: none; width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover; background: var(--papel-2); }
+.depoimento__foto--iniciais {
+  display: grid; place-items: center;
+  background: var(--vinho); color: var(--papel);
+  font-family: var(--fonte-titulo); font-weight: 600; font-size: 1.1rem;
+}
 .depoimento__nome { display: block; font-weight: 700; color: var(--vinho); }
 .depoimento__id { display: block; font-size: var(--t-pequeno); color: var(--tinta-suave); }
 
@@ -174,3 +175,61 @@
 .post__texto table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
 .post__texto td, .post__texto th { border: 1px solid var(--linha); padding: 0.4rem; }
 .post__rodape { margin-top: var(--e-4); }
+
+/* ---------- Eventos: foto à esquerda e texto à direita ---------- */
+.evento-linha {
+  display: grid;
+  gap: var(--e-3);
+  margin-top: var(--e-4);
+  padding-top: var(--e-4);
+  border-top: 1px solid var(--linha);
+}
+.evento-linha--apresentacao { border-top: 0; padding-top: 0; margin-top: var(--e-3); }
+@media (min-width: 48rem) {
+  .evento-linha { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--e-4); align-items: start; }
+  /* Sem foto, o texto ocupa a linha inteira. */
+  .evento-linha > .evento-linha__texto:only-child { grid-column: 1 / -1; }
+}
+.evento-linha__foto { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--raio); background: var(--papel-2); }
+.evento-linha__titulo { font-size: var(--t-medio); margin-bottom: var(--e-1); }
+.evento-linha__texto > :last-child { margin-bottom: 0; }
+.evento-linha + .pendente, .carrossel + .pendente { margin-top: var(--e-4); }
+
+/* Espaço reservado para foto que ainda falta. */
+.foto-pendente {
+  display: grid; place-items: center;
+  border: 2px dashed var(--linha);
+  color: var(--tinta-suave);
+  font-size: var(--t-pequeno);
+  text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+}
+
+/* ---------- Carrossel das palestras ---------- */
+.carrossel { margin-top: var(--e-4); }
+.carrossel__trilho {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 var(--e-2);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 85%;
+  gap: var(--e-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+@media (min-width: 40rem) { .carrossel__trilho { grid-auto-columns: calc((100% - var(--e-3)) / 2); } }
+@media (min-width: 64rem) { .carrossel__trilho { grid-auto-columns: calc((100% - var(--e-3) * 2) / 3); } }
+.carrossel__item { scroll-snap-align: start; display: flex; }
+.carrossel__item > .card { width: 100%; }
+.carrossel__controles { display: flex; justify-content: flex-end; gap: var(--e-1); margin-top: var(--e-2); }
+.carrossel__controles[hidden] { display: none; }
+.carrossel__botao {
+  width: 2.75rem; height: 2.75rem;
+  border: 1px solid var(--vinho); border-radius: 50%;
+  background: var(--papel); color: var(--vinho);
+  font-size: 1.2rem; cursor: pointer;
+}
+.carrossel__botao:hover:not(:disabled) { background: var(--vinho); color: var(--papel); }
+.carrossel__botao:disabled { opacity: 0.35; cursor: default; }

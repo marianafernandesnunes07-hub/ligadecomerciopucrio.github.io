@@ -30,12 +30,16 @@ Para **corrigir** um post, abra-o no painel, edite e salve de novo. Para **apaga
 
 Mesmo caminho, nas opções **Eventos: Visitas Guiadas**, **Eventos: Palestras** ou **Eventos: Semana**. Marque **Mostrar nos Destaques** se a visita deve aparecer na página inicial.
 
+- **Visitas guiadas** aparecem com a foto à esquerda e a descrição à direita. Fotos na horizontal funcionam melhor.
+- **Palestras** aparecem num carrossel que passa para o lado, da mais recente para a mais antiga. Não há limite: as novas entram no começo e as antigas ficam mais para o lado.
+
 ## Atualizar diretoria, depoimentos e contatos
 
 No painel, em **Institucional**:
 
 - **Diretoria**: troque a gestão (ex.: 2027.1), os nomes, cargos e fotos. Use fotos quadradas, se possível.
-- **Depoimentos**
+- **Depoimentos**: nome, identificação, texto e foto (opcional). Sem foto, aparecem as iniciais da pessoa num círculo.
+- **Foto da Semana de Comércio e Negócios Internacionais**: a foto que aparece nos Destaques e na página Eventos.
 - **Contatos e configurações**: e-mail, Instagram, LinkedIn e logo.
 
 ## Dicas

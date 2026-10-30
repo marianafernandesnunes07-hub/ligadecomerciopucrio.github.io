@@ -91,5 +91,15 @@ Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: fals
 3. Testar o painel com um token antes de passar para o Marketing.
 4. Ter pelo menos duas pessoas da diretoria como administradoras do repositório.
 
+## Etapa 3. Ajustes de layout pedidos pela Mari (30/10/2026)
+
+- **Página inicial**: títulos de Quem somos e Nosso Propósito centralizados (classe `titulo-secao--centro`). A partir de Nossos Valores, tudo continua alinhado à esquerda.
+- **Valores**: sem os números 01, 02, 03; só os nomes.
+- **Destaques**: todo card tem foto no topo. Sem foto, aparece um espaço tracejado "Foto a completar" (some com `mostrarPendencias: false`). A foto da Semana fica em `src/_dados/semana.json` (painel: Institucional → Foto da Semana).
+- **Depoimentos**: campo de foto opcional (`foto` em `depoimentos.json`, imagens em `src/imagens/depoimentos/`). Sem foto, aparecem as iniciais num círculo vinho.
+- **Diretoria**: fotos quadradas (cantos levemente arredondados) e mais espaço entre elas.
+- **Eventos**: Visitas Guiadas e Semana com foto à esquerda e texto à direita (no celular, foto em cima). Palestras viraram carrossel com setas, da mais recente para a mais antiga; as setas só aparecem quando há mais palestras do que cabem na tela. Script em `src/scripts/carrossel.js`.
+- Novas pendências: fotos dos depoimentos e foto da Semana.
+
 ## Como retomar numa conversa nova
 Pedir para o Claude ler este PROCESSO.md (no Projeto "Site Liga de Comércio PUC-Rio" ou no repositório) e conectar o repositório `marianafernandesnunes07-hub/ligadecomerciopucrio.github.io`.

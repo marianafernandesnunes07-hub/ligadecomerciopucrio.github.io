@@ -145,6 +145,13 @@ collections:
               - { label: "Nome", name: nome, widget: string }
               - { label: "Identificação", name: identificacao, widget: string }
               - { label: "Texto", name: texto, widget: text }
+              - { label: "Foto (opcional; sem foto aparecem as iniciais)", name: foto, widget: image, required: false, media_folder: /src/imagens/depoimentos, public_folder: /imagens/depoimentos }
+      - name: semana
+        label: "Foto da Semana de Comércio e Negócios Internacionais"
+        file: src/_dados/semana.json
+        fields:
+          - { label: "Foto (aparece em Destaques e na página Eventos)", name: foto, widget: image, required: false, media_folder: /src/imagens/eventos, public_folder: /imagens/eventos }
+          - { label: "Descrição da foto (acessibilidade)", name: descricaoFoto, widget: string, required: false }
       - name: site
         label: "Contatos e configurações"
         file: src/_dados/site.json

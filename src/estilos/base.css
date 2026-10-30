@@ -94,6 +94,9 @@ main:focus, section:focus { outline: none; }
   width: 3rem; height: 3px;
   background: var(--laranja);
 }
+/* Título centralizado (Quem somos e Nosso Propósito). */
+.titulo-secao--centro { text-align: center; }
+.titulo-secao--centro::before { left: 50%; transform: translateX(-50%); }
 
 .sobretitulo {
   font-size: var(--t-pequeno);

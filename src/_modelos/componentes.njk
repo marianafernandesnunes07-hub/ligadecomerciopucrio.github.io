@@ -40,6 +40,32 @@
 </article>
 {% endmacro %}
 
+{# Foto do topo de um card de Destaques. Sem foto, mostra um espaço reservado
+   (só enquanto "mostrarPendencias" estiver ligado). #}
+{% macro fotoDestaque(foto, descricao, mostrar) %}
+{% if foto %}<img class="destaque__foto" src="{{ foto }}" alt="{{ descricao or '' }}" loading="lazy" width="600" height="338">
+{% elif mostrar %}<div class="destaque__foto foto-pendente" aria-hidden="true">Foto a completar</div>{% endif %}
+{% endmacro %}
+
+{# Evento em linha: foto à esquerda e descrição à direita (Visitas Guiadas). #}
+{% macro eventoEmLinha(evento, mostrar) %}
+<article class="evento-linha">
+  {% if evento.data.foto %}
+    <img class="evento-linha__foto" src="{{ evento.data.foto }}" alt="{{ evento.data.descricaoFoto or '' }}" loading="lazy" width="600" height="400">
+  {% elif mostrar %}
+    <div class="evento-linha__foto foto-pendente" aria-hidden="true">Foto a completar</div>
+  {% endif %}
+  <div class="evento-linha__texto">
+    <h3 class="evento-linha__titulo">{{ evento.data.titulo }}</h3>
+    <p class="card__meta">
+      <time datetime="{{ evento.data.data | dataISO }}">{{ evento.data.data | dataBR("mes") if evento.data.soMesAno else evento.data.data | dataBR }}</time>
+      {% if evento.data.convidados %} · {{ evento.data.convidados }}{% endif %}
+    </p>
+    {{ evento.content | safe }}
+  </div>
+</article>
+{% endmacro %}
+
 {# Aviso de informação que ainda falta. Some do site quando
    "mostrarPendencias" for false em src/_dados/site.json. #}
 {% macro pendente(texto, mostrar) %}
