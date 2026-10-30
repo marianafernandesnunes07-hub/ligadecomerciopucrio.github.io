@@ -57,7 +57,9 @@ npm run build    # gera o site pronto na pasta _site/
 
 1. Na primeira vez, no GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 2. Depois disso, qualquer alteração na branch `main` publica sozinha. O andamento aparece na aba **Actions**.
-3. Endereço: `https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio/`
+3. Endereço: `https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/` (o GitHub usa o nome do repositório como subpasta; veja "Endereço" abaixo)
+
+**Endereço:** um site fica na raiz (`nome.github.io`, sem subpasta) só quando o repositório tem exatamente o nome da conta dona dele + `.github.io`. O ideal é criar uma organização da Liga no GitHub (ex.: `lcni-pucrio`) e um repositório `lcni-pucrio.github.io` dentro dela. O workflow detecta isso sozinho. Depois, atualize `repo` e `site_url` em `admin/config.yml`.
 
 **Domínio próprio:** em Settings → Pages → Custom domain. Depois, em `.github/workflows/publicar.yml`, troque `PATH_PREFIX` para `/` e atualize `site_url` em `admin/config.yml`.
 

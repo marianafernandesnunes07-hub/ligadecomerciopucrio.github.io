@@ -6,7 +6,7 @@ Guia para quem é do Marketing (ou de qualquer GT) e precisa publicar um post ou
 
 1. Tenha uma conta no GitHub e peça a quem administra o repositório para te adicionar como colaborador(a) (Settings → Collaborators).
 2. Crie um **token de acesso** no GitHub: foto do perfil → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token.
-   - Repository access: só o repositório `ligadecomerciopucrio`.
+   - Repository access: só o repositório `ligadecomerciopucrio.github.io`.
    - Permissions: **Contents: Read and write**.
    - Guarde o token num lugar seguro. Ele funciona como uma senha: não mande no grupo.
 

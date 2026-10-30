@@ -4,7 +4,7 @@
 
 backend:
   name: github
-  repo: marianafernandesnunes07-hub/ligadecomerciopucrio
+  repo: marianafernandesnunes07-hub/ligadecomerciopucrio.github.io
   branch: main
   commit_messages:
     create: "Novo conteúdo: {{slug}}"
@@ -13,7 +13,7 @@ backend:
     uploadMedia: "Envia imagem: {{path}}"
 
 locale: pt
-site_url: https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio/
+site_url: https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/
 
 # Onde as imagens enviadas pelo painel ficam guardadas.
 media_folder: src/imagens/posts

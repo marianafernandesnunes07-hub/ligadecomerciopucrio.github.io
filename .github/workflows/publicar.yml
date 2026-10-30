@@ -26,11 +26,21 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # PATH_PREFIX: nome do repositório, porque o GitHub Pages publica numa subpasta.
-      # Se a Liga tiver domínio próprio, troque para "/".
-      - run: npm run build
-        env:
-          PATH_PREFIX: /${{ github.event.repository.name }}/
+      # Descobre em que endereço o site vai ficar:
+      # - repositório "usuario.github.io" (com o mesmo nome da conta): raiz do endereço, "/"
+      # - qualquer outro nome: subpasta com o nome do repositório, "/nome-do-repo/"
+      # Com domínio próprio, troque a linha do PATH_PREFIX por: PATH_PREFIX="/"
+      - name: Gerar o site
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          DONO="${{ github.repository_owner }}"
+          if [ "$(echo "$REPO" | tr A-Z a-z)" = "$(echo "$DONO" | tr A-Z a-z).github.io" ]; then
+            PATH_PREFIX="/"
+          else
+            PATH_PREFIX="/$REPO/"
+          fi
+          echo "Publicando em: $PATH_PREFIX"
+          PATH_PREFIX="$PATH_PREFIX" npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
