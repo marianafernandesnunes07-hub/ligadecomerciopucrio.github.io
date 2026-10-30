@@ -59,8 +59,37 @@ O texto completo dos posts foi exportado pelo navegador do app (a rede do servid
 
 Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: false` em `src/_dados/site.json`.
 
-### Para colocar no ar
-1. GitHub → Settings → Pages → Source: **GitHub Actions**.
-2. Conferir o site em https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio/
-3. Testar o painel em `/admin/` com um token (passo a passo no COMO-PUBLICAR.md).
-4. Avaliar se o repositório deve passar para uma conta ou organização da Liga, para não depender de uma pessoa só quando a gestão mudar.
+## Etapa 2. Site no ar e ajustes (30/10/2026)
+
+### Endereços
+- Site: https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/
+- Painel de publicação: https://marianafernandesnunes07-hub.github.io/ligadecomerciopucrio.github.io/admin/
+- Repositório: https://github.com/marianafernandesnunes07-hub/ligadecomerciopucrio.github.io
+
+### O que aconteceu
+- A Mari renomeou o repositório de `ligadecomerciopucrio` para `ligadecomerciopucrio.github.io`. Esse nome **não** deixa o site na raiz: o GitHub só faz isso quando o repositório se chama exatamente `<conta-dona>.github.io`. Por isso o endereço tem o nome do repositório como subpasta.
+- As primeiras publicações falharam com erro 404 ("Ensure GitHub Pages has been enabled") porque o Pages ainda não estava ligado. Resolvido em Settings → Pages → Source: **GitHub Actions**. Desde então cada alteração na `main` publica sozinha.
+- O workflow (`.github/workflows/publicar.yml`) agora detecta sozinho se o site fica na raiz (repositório `conta.github.io`) ou numa subpasta. O painel (`admin/config.yml`) e os guias foram atualizados com o nome novo.
+- A pedido da Mari, os parágrafos passaram a ocupar toda a largura do conteúdo em todas as páginas (`--largura-texto: 100%` em `tokens.css`). Quem somos e Nosso Propósito agora têm título em cima e texto embaixo. Para voltar a estreitar o texto dos posts, trocar para `42rem`.
+
+### Segurança (resposta dada à Mari)
+- Qualquer pessoa abre o site e a página do painel, mas só salva quem é colaborador(a) do repositório e entra com um token com permissão Contents: Read and write.
+- O repositório é público (necessário para o Pages gratuito): todos veem o código, ninguém edita sem permissão.
+- Na troca de gestão: remover quem saiu em Settings → Collaborators, pedir que apaguem os tokens e adicionar quem entrou.
+
+### Guia em Word
+- `guia/Guia do site da LCNI.docx`: guia de cuidados e de como adicionar, editar e remover informações, na identidade da Liga (logo, vinho, laranja, amarelo; fontes Georgia e Calibri). 6 páginas: como o site funciona, acessos e segurança, posts, eventos, diretoria/depoimentos/contatos, boas práticas, problemas comuns e checklist de passagem de gestão.
+- Para gerar de novo depois de editar o texto: `node guia/gerar-guia.js` (precisa do pacote `docx`: `npm install docx`).
+
+### Arquivos temporários no Mac da Mari (podem ser apagados)
+- Em Downloads: `wixposts.json`, `wiximgs1.json`, `wiximgs2.json`, `lcni.json` e dois arquivos ocultos que começam com `.Q6L2SF6YDW`.
+- A pasta `Projetos/lcni-wix-export`.
+
+### Próximos passos sugeridos
+1. Responder as pendências da Etapa 1 (decisões provisórias e caixas "A completar").
+2. Criar uma organização da Liga no GitHub (ex.: `lcni-pucrio`) e transferir o repositório como `lcni-pucrio.github.io`, para ter endereço curto e não depender de conta pessoal. Depois, atualizar `repo` e `site_url` em `admin/config.yml`.
+3. Testar o painel com um token antes de passar para o Marketing.
+4. Ter pelo menos duas pessoas da diretoria como administradoras do repositório.
+
+## Como retomar numa conversa nova
+Pedir para o Claude ler este PROCESSO.md (no Projeto "Site Liga de Comércio PUC-Rio" ou no repositório) e conectar o repositório `marianafernandesnunes07-hub/ligadecomerciopucrio.github.io`.
