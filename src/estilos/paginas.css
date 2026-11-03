@@ -77,7 +77,7 @@
   padding: var(--e-3);
   display: grid;
   gap: var(--e-3);
-  align-content: start;
+  align-content: stretch;
 }
 /* Foto ao lado do texto quando o card tem largura para isso. */
 @media (min-width: 30rem) { .depoimento { grid-template-columns: 9rem minmax(0, 1fr); } }
@@ -297,9 +297,12 @@
 .atividades__ponto[aria-current="true"] { background: var(--vinho); }
 
 /* Depoimentos: dois por vez no computador, um por vez no celular.
-   Cada card tem a própria altura, assim abrir um texto não estica os vizinhos. */
+   Fechados, os cards têm a mesma altura. Com um texto aberto ("tem-aberto",
+   posto por depoimentos.js), cada card volta à própria altura, assim abrir
+   um texto não estica os vizinhos. */
 .carrossel--depoimentos { margin-top: var(--e-3); }
-.carrossel--depoimentos .carrossel__trilho { grid-auto-columns: 90%; align-items: start; }
+.carrossel--depoimentos .carrossel__trilho { grid-auto-columns: 90%; }
+.carrossel--depoimentos .carrossel__trilho.tem-aberto { align-items: start; }
 @media (min-width: 64rem) { .carrossel--depoimentos .carrossel__trilho { grid-auto-columns: calc((100% - var(--e-3)) / 2); } }
 .carrossel--depoimentos + .pendente { margin-top: var(--e-3); }
 

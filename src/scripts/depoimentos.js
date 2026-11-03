@@ -24,5 +24,8 @@ document.querySelectorAll(".depoimento").forEach((card) => {
     texto.classList.toggle("recolhido", !abrir);
     botao.setAttribute("aria-expanded", String(abrir));
     botao.textContent = abrir ? "Mostrar menos" : "Ler depoimento completo";
+    // Com algum texto aberto, os cards deixam de ter a mesma altura (ver paginas.css).
+    const trilho = card.closest(".carrossel__trilho");
+    if (trilho) trilho.classList.toggle("tem-aberto", !!trilho.querySelector('.depoimento__botao[aria-expanded="true"]'));
   });
 });
