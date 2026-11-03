@@ -235,6 +235,9 @@
   grid-auto-columns: 85%;
   gap: var(--e-3);
   overflow-x: auto;
+  /* "relative" prende dentro do trilho o que é posicionado nos slides (como o texto
+     escondido para leitores de tela); sem isso, os slides fora da tela alargam a página. */
+  position: relative;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
   scrollbar-width: thin;
@@ -265,6 +268,9 @@
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   overflow-x: auto;
+  /* "relative" prende dentro do trilho o que é posicionado nos slides (como o texto
+     escondido para leitores de tela); sem isso, os slides fora da tela alargam a página. */
+  position: relative;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
