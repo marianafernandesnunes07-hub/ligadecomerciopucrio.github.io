@@ -8,7 +8,7 @@ permalink: /eventos/
 <header class="cabecalho-pagina">
   <div class="container">
     <h1>Eventos</h1>
-    {{ c.pendente("texto de introdução geral sobre o papel dos eventos na atuação da Liga.", site.mostrarPendencias) }}
+    <p class="introducao">Os eventos são uma das principais formas de atuação da Liga, promovendo espaços de troca de conhecimento, debate e conexão entre estudantes e profissionais. Por meio de palestras, aulas de aprofundamento e visitas institucionais, buscamos aproximar a comunidade acadêmica do mercado de comércio e negócios internacionais. Nosso objetivo é proporcionar experiências que ampliem perspectivas, estimulem o pensamento crítico e contribuam para a formação acadêmica e profissional dos nossos membros.</p>
     <nav aria-label="Categorias de eventos">
       <ul class="ancoras">
         {% for cat in categorias.eventos %}<li><a href="#{{ cat.id }}">{{ cat.nome }}</a></li>{% endfor %}
