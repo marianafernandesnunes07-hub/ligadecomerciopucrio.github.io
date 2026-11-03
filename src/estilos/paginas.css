@@ -21,6 +21,8 @@
   box-shadow: 0 0 0 1.5rem rgb(238 173 21 / 0.12);
   pointer-events: none;
 }
+/* O texto e o botão ficam na frente do círculo (no celular, ele passa por trás deles). */
+.abertura__interno { position: relative; z-index: 1; }
 .abertura__titulo { color: #fff; font-size: var(--t-enorme); max-width: 16ch; }
 .abertura__texto { font-size: var(--t-medio); color: #f6e9e6; }
 .abertura__acoes { display: flex; flex-wrap: wrap; gap: var(--e-2); margin-top: var(--e-3); }
