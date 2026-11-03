@@ -24,7 +24,7 @@
   --linha: #e6ddd5;          /* bordas */
 
   /* Tipografia */
-  --fonte-titulo: "Fraunces", Georgia, "Times New Roman", serif;
+  --fonte-titulo: "Rethink Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --fonte-texto: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Tamanhos de texto (crescem um pouco em telas grandes) */
