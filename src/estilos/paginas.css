@@ -187,6 +187,8 @@
 .post__texto h2 { font-size: 1.6rem; margin-top: var(--e-4); }
 .post__texto h3 { font-size: 1.3rem; margin-top: var(--e-3); }
 .post__texto img { margin: var(--e-3) auto; border-radius: var(--raio); }
+/* Slides de Business Case: verticais, num tamanho de leitura (como no celular). */
+.post__texto img[src*="/business-case/"] { display: block; width: 100%; max-width: 30rem; }
 .post__texto blockquote { margin: var(--e-3) 0; padding-left: var(--e-3); border-left: 3px solid var(--laranja); color: var(--tinta-suave); }
 .post__texto a { word-break: break-word; }
 .post__texto table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }

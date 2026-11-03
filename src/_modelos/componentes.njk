@@ -12,8 +12,9 @@
     <p class="card__categoria">{{ nomeCategoria }}</p>
     <h3 class="card__titulo"><a href="{{ post.url }}">{{ post.data.titulo }}</a></h3>
     <p class="card__meta">
-      <time datetime="{{ post.data.data | dataISO }}">{{ post.data.data | dataBR }}</time>
-      {% if post.data.empresa %} · {{ post.data.empresa }}{% endif %}
+      {# "dataAConfirmar: true" esconde a data (usada só para ordenar) até ela ser confirmada. #}
+      {% if not post.data.dataAConfirmar %}<time datetime="{{ post.data.data | dataISO }}">{{ post.data.data | dataBR }}</time>{% endif %}
+      {% if post.data.empresa %}{% if not post.data.dataAConfirmar %} · {% endif %}{{ post.data.empresa }}{% endif %}
       {% if post.data.autores and post.data.autores.length %}<br>Por {{ post.data.autores | juntarNomes }}{% endif %}
     </p>
     {% if post.data.resumo %}<p class="card__texto">{{ post.data.resumo | resumir(200) }}</p>{% endif %}
@@ -84,7 +85,8 @@
       <div class="atividade__texto">
         <p class="atividade__contador" aria-hidden="true">{{ loop.index }} / {{ lista.length }}</p>
         <h4 class="atividade__nome">{{ a.nome }}</h4>
-        {% if a.descricao %}<p>{{ a.descricao }}</p>{% else %}{{ pendente("descrição curta desta atividade.", mostrar) }}{% endif %}
+        {# Sem descrição, só pede uma quando não há link: com link, a descrição já está na página de destino. #}
+        {% if a.descricao %}<p>{{ a.descricao }}</p>{% elif not a.link %}{{ pendente("descrição curta desta atividade.", mostrar) }}{% endif %}
         {% if a.link %}<a class="atividade__link" href="{{ a.link }}">Ver {{ a.nome }}</a>{% endif %}
       </div>
     </li>
