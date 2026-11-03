@@ -15,8 +15,14 @@ cartazes:
     descricao: "Cartaz do workshop Perspectivas de Carreira com Ramon Leite, head comercial de negócios internacionais na MAT Equipamentos para Gases: segunda-feira, 13/04, às 13h, sala F402 da PUC-Rio."
   - foto: /imagens/eventos/2026-04-workshop-renata-ribeiro.jpg
     descricao: "Cartaz do workshop Perspectivas de Carreira com Renata Ribeiro, mentora de negócios internacionais à frente da Colab Comex Consultoria e parceira na BQ Stones: segunda-feira, 13/04, às 13h, sala F402 da PUC-Rio."
+  - foto: /imagens/eventos/2026-04-workshop-marcello-cappucci.jpg
+    descricao: "Cartaz do workshop Cultura Empresarial: como se preparar para uma negociação internacional, com Marcello Cappucci, professor do Instituto de Relações Internacionais da PUC-Rio há 12 anos: exclusivo para membros, terça-feira, 14/04, às 20h."
+  - foto: /imagens/eventos/2026-04-workshop-fabio-martins.jpg
+    descricao: "Cartaz do workshop Internacionalização de Empresas: desenvolvimento de negócios internacionais e diplomacia corporativa, com Fábio Martins, consultor executivo em internacionalização e estratégia na fíbraton e na Apex-Brasil: exclusivo para membros, quarta-feira, 15/04, às 20h."
   - foto: /imagens/eventos/2026-04-workshop-paulo-roberto-de-almeida.jpg
     descricao: "Cartaz do workshop Diplomacia em Foco com Paulo Roberto de Almeida, diplomata de carreira, escritor e professor universitário: quinta-feira, 16/04, às 20h, via Zoom."
+  - foto: /imagens/eventos/2026-04-workshop-fernanda-beatriz.jpg
+    descricao: "Cartaz do workshop Comércio Aduaneiro: etapas do processo de importação e exportação, com Fernanda Beatriz, cofundadora da LDC Comex, com 25 anos de experiência em consultoria aduaneira: exclusivo para membros, sexta-feira, 17/04, às 17h."
 ---
 Primeira edição da Semana, realizada com o nome Workshop LCI.
 
