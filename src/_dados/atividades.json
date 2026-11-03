@@ -4,15 +4,15 @@
       "nome": "Análise de Conjuntura Semanal",
       "descricao": "Acompanhamento e análise de acontecimentos relevantes do cenário internacional.",
       "link": "/conteudos/#analise-de-conjuntura",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/posts/c1ceb65cd0e54a5f984ccb880f657b2d.jpg",
+      "descricaoFoto": "Interior de uma siderúrgica, imagem de capa de uma das análises de conjuntura"
     },
     {
       "nome": "Artigo Mensal",
       "descricao": "Produção coletiva de artigos que aprofundam temas relacionados ao comércio e aos negócios internacionais.",
       "link": "/conteudos/#artigos",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/posts/efecd8254c174d08bd6be0e3870aa575.jpg",
+      "descricaoFoto": "Mapa-múndi dos cabos submarinos, capa do artigo sobre a infraestrutura invisível do comércio"
     }
   ],
   "marketing": [
@@ -20,22 +20,22 @@
       "nome": "Identidade Visual",
       "descricao": "",
       "link": "",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/atividades/identidade-visual.jpg",
+      "descricaoFoto": "Logo da Liga sobre fundo vinho"
     },
     {
       "nome": "Business Case",
       "descricao": "",
       "link": "/conteudos/#business-case",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/atividades/business-case.jpg",
+      "descricaoFoto": "Capa do Business Case sobre as Havaianas"
     },
     {
       "nome": "Em Alta",
       "descricao": "",
       "link": "/conteudos/#em-alta",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/atividades/em-alta.jpg",
+      "descricaoFoto": "Capa do Em Alta no Mundo dos Negócios sobre a expansão da inteligência artificial nos negócios"
     }
   ],
   "extensao": [
@@ -43,22 +43,22 @@
       "nome": "Visitas Guiadas",
       "descricao": "Experiências em empresas e instituições para conhecer operações, estratégias e ambientes de trabalho.",
       "link": "/eventos/#visitas-guiadas",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/eventos/2025-09-visita-rio-brasil-terminal.jpg",
+      "descricaoFoto": "Grupo da visita em frente ao letreiro do Rio Brasil Terminal"
     },
     {
       "nome": "Palestras",
       "descricao": "Encontros com profissionais e especialistas para discutir temas relevantes e compartilhar experiências.",
       "link": "/eventos/#palestras",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/atividades/palestras.jpg",
+      "descricaoFoto": "Turma assiste à palestra Protecionismo e o Comércio Internacional na Era Trump II"
     },
     {
       "nome": "Semana de Comércio e Negócios Internacionais",
       "descricao": "Atividades temáticas de aprofundamento, troca de conhecimentos e desenvolvimento dos membros.",
       "link": "/eventos/#semana",
-      "foto": "",
-      "descricaoFoto": ""
+      "foto": "/imagens/atividades/semana.jpg",
+      "descricaoFoto": "Convidados da 1ª edição, o Workshop LCI, sob as colunas da PUC-Rio"
     }
   ]
 }
