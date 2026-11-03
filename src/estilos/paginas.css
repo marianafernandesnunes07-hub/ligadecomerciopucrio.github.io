@@ -46,6 +46,9 @@
 .destaque { display: flex; flex-direction: column; }
 /* A foto ocupa o topo do card, de borda a borda. */
 .destaque__foto { margin: calc(var(--e-3) * -1) calc(var(--e-3) * -1) var(--e-3); width: calc(100% + var(--e-3) * 2); max-width: none; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--raio) var(--raio) 0 0; }
+/* Cartazes no lugar da foto (card da Semana): três lado a lado. */
+.destaque__cartazes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--e-1); align-items: center; padding: var(--e-2); background: rgb(0 0 0 / 0.18); }
+.destaque__cartazes img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
 .destaque .foto-pendente { background: rgb(255 255 255 / 0.08); border-color: rgb(255 255 255 / 0.35); color: #f6e9e6; }
 .destaque__tipo { font-size: var(--t-pequeno); text-transform: uppercase; letter-spacing: 0.08em; color: var(--amarelo); font-weight: 600; }
 .destaque .pendente { color: var(--tinta); }
@@ -299,6 +302,13 @@
 .carrossel--depoimentos .carrossel__trilho { grid-auto-columns: 90%; align-items: start; }
 @media (min-width: 64rem) { .carrossel--depoimentos .carrossel__trilho { grid-auto-columns: calc((100% - var(--e-3)) / 2); } }
 .carrossel--depoimentos + .pendente { margin-top: var(--e-3); }
+
+/* Cartazes de uma edição da Semana: três por vez no computador. */
+.carrossel--cartazes { margin-top: var(--e-3); }
+.carrossel--cartazes .carrossel__trilho { grid-auto-columns: 70%; }
+@media (min-width: 40rem) { .carrossel--cartazes .carrossel__trilho { grid-auto-columns: calc((100% - var(--e-3) * 2) / 3); } }
+.cartaz { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--raio); background: var(--papel-2); }
+.carrossel--cartazes + .pendente { margin-top: var(--e-3); }
 
 /* Link da diretoria para a página de membros. */
 .diretoria__mais { margin: var(--e-4) 0 0; }

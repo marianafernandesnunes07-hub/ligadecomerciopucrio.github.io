@@ -77,7 +77,15 @@ layout: base.njk
         {% endif %}
       {% endfor %}
       <article class="destaque">
-        {{ c.fotoDestaque(semana.foto, semana.descricaoFoto, site.mostrarPendencias) }}
+        {# Sem foto da Semana, mostra três cartazes da edição mais recente. #}
+        {% set edicaoSemana = (collections.eventos | daCategoria("semana"))[0] %}
+        {% if not semana.foto and edicaoSemana and edicaoSemana.data.cartazes and edicaoSemana.data.cartazes.length %}
+          <div class="destaque__foto destaque__cartazes">
+            {% for cartaz in edicaoSemana.data.cartazes.slice(0, 3) %}<img src="{{ cartaz.foto }}" alt="{{ cartaz.descricao or '' }}" loading="lazy" width="720" height="900">{% endfor %}
+          </div>
+        {% else %}
+          {{ c.fotoDestaque(semana.foto, semana.descricaoFoto, site.mostrarPendencias) }}
+        {% endif %}
         <p class="destaque__tipo">Evento · <time datetime="2026-04-13">13 a 17 de abril de 2026</time></p>
         <h3>Semana de Workshops</h3>
         <p>A Semana de Workshops reúne atividades temáticas voltadas ao aprofundamento de conhecimentos e ao desenvolvimento dos membros da LCNI. Por meio de encontros e atividades práticas, a iniciativa promove a troca de experiências e aproxima os estudantes de temas relevantes para o comércio e os negócios internacionais.</p>

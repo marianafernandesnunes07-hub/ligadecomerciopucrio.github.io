@@ -38,7 +38,27 @@ permalink: /eventos/
             {% for paragrafo in cat.descricao.split("\n\n") %}<p>{{ paragrafo }}</p>{% endfor %}
           </div>
         </div>
-        {% for evento in lista %}{{ c.eventoEmLinha(evento, site.mostrarPendencias) }}{% endfor %}
+        {% for evento in lista %}
+          {{ c.eventoEmLinha(evento, site.mostrarPendencias) }}
+          {# Cartazes da edição (campo "cartazes" do evento), num carrossel como o das palestras. #}
+          {% if evento.data.cartazes and evento.data.cartazes.length %}
+            <div class="carrossel carrossel--cartazes" data-carrossel>
+              <ul class="carrossel__trilho" id="cartazes-{{ evento.fileSlug }}" tabindex="0" aria-label="Cartazes da {{ evento.data.titulo }}: role para o lado para ver mais">
+                {% for cartaz in evento.data.cartazes %}
+                  <li class="carrossel__item"><img class="cartaz" src="{{ cartaz.foto }}" alt="{{ cartaz.descricao or '' }}" loading="lazy" width="720" height="900"></li>
+                {% endfor %}
+              </ul>
+              <div class="carrossel__controles" hidden>
+                <button type="button" class="carrossel__botao" data-direcao="-1" aria-controls="cartazes-{{ evento.fileSlug }}">
+                  <span aria-hidden="true">←</span><span class="visualmente-oculto">Cartazes anteriores</span>
+                </button>
+                <button type="button" class="carrossel__botao" data-direcao="1" aria-controls="cartazes-{{ evento.fileSlug }}">
+                  <span aria-hidden="true">→</span><span class="visualmente-oculto">Próximos cartazes</span>
+                </button>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
 
       {% elif cat.id == "palestras" %}
         {% for paragrafo in cat.descricao.split("\n\n") %}<p class="introducao">{{ paragrafo }}</p>{% endfor %}

@@ -98,6 +98,13 @@ collections:
       - { label: "Foto", name: foto, widget: image, required: false, media_folder: /src/imagens/eventos, public_folder: /imagens/eventos }
       - { label: "Descrição da foto (acessibilidade)", name: descricaoFoto, widget: string, required: false }
       - { label: "Mostrar nos Destaques da página inicial", name: destaque, widget: boolean, default: false }
+      - label: "Cartazes (aparecem em carrossel; usado na Semana)"
+        name: cartazes
+        widget: list
+        required: false
+        fields:
+          - { label: "Cartaz", name: foto, widget: image, media_folder: /src/imagens/eventos, public_folder: /imagens/eventos }
+          - { label: "Descrição do cartaz (acessibilidade)", name: descricao, widget: string, required: false }
       - { label: "Descrição", name: body, widget: markdown }
 
   - name: eventos-palestras
