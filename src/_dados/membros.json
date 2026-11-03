@@ -3,15 +3,128 @@
   "grupos": [
     {
       "area": "Conteúdo",
-      "membros": []
+      "membros": [
+        {
+          "nome": "Andressa Cardoso",
+          "curso": "",
+          "foto": "/imagens/membros/andressa-cardoso.jpg"
+        },
+        {
+          "nome": "Carolina Vasconcelos",
+          "curso": "Direito",
+          "foto": "/imagens/membros/carolina-vasconcelos.jpg"
+        },
+        {
+          "nome": "Helena Borella",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/helena-borella.jpg"
+        },
+        {
+          "nome": "Julia Aguiar",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/julia-aguiar.jpg"
+        },
+        {
+          "nome": "Julia Marini",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/julia-marini.jpg"
+        },
+        {
+          "nome": "Leticia Vieira",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/leticia-vieira.jpg"
+        }
+      ]
     },
     {
       "area": "Marketing",
-      "membros": []
+      "membros": [
+        {
+          "nome": "Ana Beatriz Damasceno",
+          "curso": "Relações Internacionais e Marketing",
+          "foto": "/imagens/membros/ana-beatriz-damasceno.jpg"
+        },
+        {
+          "nome": "Elisa Vilela",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/elisa-vilela.jpg"
+        },
+        {
+          "nome": "Karina Valeriano",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/karina-valeriano.jpg"
+        },
+        {
+          "nome": "Leonardo Paes",
+          "curso": "Administração",
+          "foto": "/imagens/membros/leonardo-paes.jpg"
+        },
+        {
+          "nome": "Ludmilla Menezes",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/ludmilla-menezes.jpg"
+        },
+        {
+          "nome": "Maria Fernanda Branco",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/maria-fernanda-branco.jpg"
+        },
+        {
+          "nome": "Ísis Cherman",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/isis-cherman.jpg"
+        }
+      ]
     },
     {
       "area": "Extensão",
-      "membros": []
+      "membros": [
+        {
+          "nome": "Alan Barbosa",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/alan-barbosa.jpg"
+        },
+        {
+          "nome": "Allicia Medina",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/allicia-medina.jpg"
+        },
+        {
+          "nome": "Amanda Arias",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/amanda-arias.jpg"
+        },
+        {
+          "nome": "Clara Cardoso",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/clara-cardoso.jpg"
+        },
+        {
+          "nome": "Gabriel Zahar",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/gabriel-zahar.jpg"
+        },
+        {
+          "nome": "Gabriel de Faria",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/gabriel-de-faria.jpg"
+        },
+        {
+          "nome": "Gabriela de Souza",
+          "curso": "Direito",
+          "foto": "/imagens/membros/gabriela-de-souza.jpg"
+        },
+        {
+          "nome": "Gabriella Di Napoli",
+          "curso": "Direito",
+          "foto": "/imagens/membros/gabriella-di-napoli.jpg"
+        },
+        {
+          "nome": "Isadora Luz",
+          "curso": "Relações Internacionais",
+          "foto": "/imagens/membros/isadora-luz.jpg"
+        }
+      ]
     }
   ]
 }
