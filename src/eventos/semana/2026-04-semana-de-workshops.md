@@ -1,10 +1,10 @@
 ---
-titulo: Semana de Workshops 2026
+titulo: "Workshop LCI: 1ª edição"
 data: 2026-04-13
 soMesAno: true
 convidados: 13 a 17 de abril
-foto:
-descricaoFoto:
+foto: /imagens/eventos/2026-04-workshop-painel.jpg
+descricaoFoto: "Convidada apresenta à turma no workshop Perspectivas de Carreira, com outros dois convidados sentados ao lado"
 destaque: false
 cartazes:
   - foto: /imagens/eventos/2026-04-workshop-giselle-hipolito.jpg
@@ -18,6 +18,8 @@ cartazes:
   - foto: /imagens/eventos/2026-04-workshop-paulo-roberto-de-almeida.jpg
     descricao: "Cartaz do workshop Diplomacia em Foco com Paulo Roberto de Almeida, diplomata de carreira, escritor e professor universitário: quinta-feira, 16/04, às 20h, via Zoom."
 ---
+Primeira edição da Semana, realizada com o nome Workshop LCI.
+
 - **13/04 · Perspectivas de Carreira:** 4 trajetórias de sucesso no comércio exterior. Convidados: Giselle Hipólito, Diana Cavallari, Ramon Leite e Renata Ribeiro.
 - **14/04 · Cultura Empresarial:** como se preparar para uma negociação internacional. Convidado: Marcello Cappucci.
 - **15/04 · Internacionalização de Empresas:** desenvolvimento de negócios internacionais e diplomacia corporativa. Convidado: Fábio Martins.

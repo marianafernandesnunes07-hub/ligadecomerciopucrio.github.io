@@ -43,7 +43,7 @@ permalink: /eventos/
           {# Cartazes da edição (campo "cartazes" do evento), num carrossel como o das palestras. #}
           {% if evento.data.cartazes and evento.data.cartazes.length %}
             <div class="carrossel carrossel--cartazes" data-carrossel>
-              <ul class="carrossel__trilho" id="cartazes-{{ evento.fileSlug }}" tabindex="0" aria-label="Cartazes da {{ evento.data.titulo }}: role para o lado para ver mais">
+              <ul class="carrossel__trilho" id="cartazes-{{ evento.fileSlug }}" tabindex="0" aria-label="Cartazes ({{ evento.data.titulo }}): role para o lado para ver mais">
                 {% for cartaz in evento.data.cartazes %}
                   <li class="carrossel__item"><img class="cartaz" src="{{ cartaz.foto }}" alt="{{ cartaz.descricao or '' }}" loading="lazy" width="720" height="900"></li>
                 {% endfor %}
