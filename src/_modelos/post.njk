@@ -15,8 +15,8 @@ layout: base.njk
     </p>
   </header>
 
-  {# No Business Case, a capa é o primeiro slide do carrossel, que já está no texto. #}
-  {% if capa and categoria != "business-case" %}
+  {# No Business Case e no Em Alta, a capa é o primeiro slide do carrossel, que já está no texto. #}
+  {% if capa and categoria != "business-case" and categoria != "em-alta" %}
     <figure class="post__capa container">
       <img src="{{ capa }}" alt="{{ descricaoCapa or '' }}" width="1200" height="675">
     </figure>

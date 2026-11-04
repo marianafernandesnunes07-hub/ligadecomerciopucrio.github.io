@@ -127,6 +127,11 @@ Para esconder todas as caixas "A completar" de uma vez: `mostrarPendencias: fals
 - **Palestras**: quatro novas a partir dos cartazes do Drive (11/11/2024, 29/11/2024, 19/05/2025 e 22/05/2025), com descrição curta provisória. Os cards de palestra passaram a ter imagem quadrada para o cartaz aparecer quase inteiro. Faltam datas e descrições de "Protecionismo e o Comércio Internacional na Era Trump II" e da aula de aprofundamento com Giselle Hipólito (fotos no Drive).
 - **Membros 2026.2**: 23 membros com foto (Conteúdo 6, Marketing 7, Extensão 10): 22 vindos do pacote `membros-lcni.zip` e a Larissa Furtado, que faltava. Fotos em `src/imagens/membros/`, dados em `src/_dados/membros.json`. Falta o curso da Andressa Cardoso (aparece sem curso). Os nomes foram mantidos como enviados (ex.: "Julia", "Leticia" sem acento).
 - Para publicar: commit aqui e **Push origin** no GitHub Desktop (o terminal do Claude não tem login do GitHub).
+- **Business Case e Em Alta**: 7 business cases e 3 Em Alta vindos do Drive, com os slides do carrossel na página. As datas ficam escondidas (`dataAConfirmar: true`) até serem confirmadas.
+- **Análise de Conjuntura**: só a análise Mercosul–EFTA; saíram as antigas Notícias da Semana. Também saíram os Em Alta antigos e as três palestras de 2023.
+- **Semana**: a edição de 2026 se chama só "1ª edição". **Avisos**: `mostrarPendencias` está `false` em `site.json`, então nenhum "A completar" aparece no site.
+- **Publicação**: o site oficial voltou a ser o GitHub Pages, com o repositório público. O Netlify ficou sem crédito e parou de atualizar. Quando o repositório vira privado, o GitHub desliga o Pages; ao voltar, é preciso escolher GitHub Actions em Settings → Pages e rodar o workflow.
+- Pendentes: curso da Andressa Cardoso, crédito de quem criou o site no rodapé, datas dos Business Cases e Em Alta, e as duas palestras do Drive sem data.
 
 ## Como retomar numa conversa nova
 Pedir para o Claude ler este PROCESSO.md (no Projeto "Site Liga de Comércio PUC-Rio" ou no repositório) e conectar o repositório `marianafernandesnunes07-hub/ligadecomerciopucrio.github.io`.

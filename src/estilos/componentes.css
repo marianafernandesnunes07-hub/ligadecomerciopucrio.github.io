@@ -128,8 +128,9 @@ html:not(.js) .cabecalho__botao-menu { display: none; }
 .card__imagem { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--papel-2); }
 /* Palestras: a imagem é o cartaz, então fica quadrada e presa ao topo (cartazes 4:5 perdem só o rodapé). */
 .card--evento .card__imagem { aspect-ratio: 1 / 1; object-position: top; }
-/* Business Case: a capa é vertical (4:5), então aparece inteira, sem recorte. */
-.card--post[data-categoria="business-case"] .card__imagem { aspect-ratio: 4 / 5; }
+/* Business Case e Em Alta: a capa é vertical (4:5), então aparece inteira, sem recorte. */
+.card--post[data-categoria="business-case"] .card__imagem,
+.card--post[data-categoria="em-alta"] .card__imagem { aspect-ratio: 4 / 5; }
 .card__corpo { padding: var(--e-3); display: flex; flex-direction: column; flex: 1; }
 .card__categoria {
   font-size: 0.8rem;
