@@ -229,5 +229,12 @@ collections:
             fields:
               - { label: "Nome", name: nome, widget: string }
               - { label: "Link", name: url, widget: string }
+          - label: "Crédito do site (rodapé)"
+            name: credito
+            widget: object
+            fields:
+              - { label: "Nome", name: nome, widget: string }
+              - { label: "Link", name: url, widget: string }
+              - { label: "Ano", name: ano, widget: string }
           - { label: "Logo", name: logo, widget: image, media_folder: /src/imagens/marca, public_folder: /imagens/marca }
           - { label: "Mostrar avisos de conteúdo pendente", name: mostrarPendencias, widget: boolean }

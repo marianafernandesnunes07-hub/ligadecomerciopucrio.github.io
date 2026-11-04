@@ -12,6 +12,11 @@
     "nome": "Liga de Comércio",
     "url": "https://www.linkedin.com/company/ligadecomercio/"
   },
+  "credito": {
+    "nome": "Mariana Fernandes Nunes",
+    "url": "https://www.linkedin.com/in/mariana-fernandes-nunes",
+    "ano": "2026"
+  },
   "logo": "/imagens/marca/logo.png",
   "mostrarPendencias": false
 }
