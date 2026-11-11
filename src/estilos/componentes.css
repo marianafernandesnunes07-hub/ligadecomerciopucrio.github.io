@@ -169,7 +169,6 @@ html:not(.js) .cabecalho__botao-menu { display: none; }
 .rodape__marca { display: flex; gap: var(--e-2); align-items: center; }
 .rodape__marca img { width: 56px; height: 56px; object-fit: contain; background: #fff; border-radius: 50%; padding: 4px; }
 .rodape__marca p { margin: 0; }
-.rodape__links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--e-1) var(--e-3); }
 .rodape__copy { font-size: var(--t-pequeno); color: #c9bdb9; margin-top: var(--e-3); margin-bottom: 0; }
 .rodape__credito { margin-top: var(--e-1); }
 @media (min-width: 48rem) { .rodape__interno { grid-template-columns: 1fr auto; align-items: center; } }
